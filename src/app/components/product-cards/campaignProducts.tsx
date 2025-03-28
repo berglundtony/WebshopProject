@@ -15,10 +15,16 @@ export function CampaignProductList({ products }: { products: Product[] }) {
         </ul>
     );
 }
+function DiscountedPrice(product: Product) {
+    const discountedPrice = Math.ceil(product.price * 0.75);
+    return discountedPrice;
+}
 
 export function Card({ product }: { product: Product }) {
     const { addToCart } = useCart();
     const router = useRouter();
+    const discountedPrice = DiscountedPrice(product);
+    
    
     return (
         <li className={styles.card} aria-label={`Länk till ${product.title}`}>
@@ -41,7 +47,7 @@ export function Card({ product }: { product: Product }) {
                     <div>
                         <div>
                             <p className={styles.paraD}>Pris:</p>
-                            <span className={styles.price}>&euro;{Math.ceil(product.price * 0.75)}</span>
+                            <span className={styles.price}>&euro; {discountedPrice}</span>
                         </div>
                         <div>
                             <p className={styles.paraD}>Kundbetyg:</p>
@@ -56,7 +62,7 @@ export function Card({ product }: { product: Product }) {
                             onClick={(e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
-                                addToCart(product);
+                                addToCart({ ...product, price: discountedPrice });
                             }}
                         >
                             Lägg i varukorg

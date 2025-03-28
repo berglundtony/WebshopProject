@@ -6,6 +6,7 @@
   padding: 0.5rem;
   padding-bottom: 0;
   padding-right: 0;
+  gap: clamp(.2rem, 4vw, 10rem);
   width: calc(100% - 1rem);
 }
 
@@ -13,8 +14,6 @@
 @media (min-width: 768px) {
   .ToolPanel {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10rem;
-    /* Tre kolumner */
   }
 }
 

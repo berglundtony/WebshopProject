@@ -2,11 +2,19 @@
   --background: rgb(230, 223, 211);
   --foreground: #171717;
   --cardColor: rgb(221, 198, 156);
-  --cardBorderColor:gray;
+  --cardBorderColor: gray;
   --bgColBtnDetails: rgb(105, 74, 33);
   --bgColBtnBuy: rgb(172, 86, 15);
   --fontColBtnBuy: aliceblue;
+}
 
+body {
+  flex: 1;
+}
+
+main {
+  flex: 1;
+  /* Gör att main tar upp all tillgänglig höjd */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,7 +22,7 @@
     --background: #423535;
     --foreground: #ededed;
     --cardColor: #473a21;
-    --cardBorderColor:rgb(56, 56, 56);
+    --cardBorderColor: rgb(56, 56, 56);
   }
 }
 
@@ -22,6 +30,10 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -42,9 +54,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
-ul >li
-  {
-    list-style-type: none;
+
+ul>li {
+  list-style-type: none;
 }
 
 

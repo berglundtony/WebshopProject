@@ -15,11 +15,13 @@ export function CartProvider({ children }: { children: ReactNode; }) {
             if (existingIndex !== -1) {
                 return prev.map((item, index) =>
                     index === existingIndex
-                        ? { ...item, quantity: item.quantity + 1 } // Uppdatera quantity om produkten finns
+                        ? { ...item, quantity: item.quantity + 1, price: item.price + product.price } 
                         : item
                 );
+            } else {
+                return [...prev, { ...product, quantity: 1 }];  
             }
-            return [...prev, { ...product, quantity: 1 }]; // Lägg till produkt med quantity: 1 om den inte finns
+        
         });
     };
     const incrementCartItem = (id: number) => {
