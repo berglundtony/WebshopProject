@@ -1,0 +1,120 @@
+/* We wrap everything in the MainWrapper */
+.allWrapper {
+  /* text-align: justify; */
+  /* border: 1px solid red; */
+  margin-top: 10px;
+  /* width: 100vw; */
+  display: flex;
+  /* flex-direction: column; */
+  /* flex-flow: column nowrap; */
+  justify-content: space-between;
+  gap: 1vw;
+  justify-content: center;
+  /* align-items: center; */
+  height: auto;
+
+}
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid black; */
+  border-radius: 8px;
+  align-items: center;
+  background-color: var(--cardColor);
+
+  .image {
+    width: auto;
+    height: 370px;
+    margin: 0px;
+    /* border: 1px solid orange; */
+  }
+}
+
+.infoWrapper {
+  /* text-align: justify; */
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2vw;
+  height: auto;
+  padding: 1vw;
+
+  .h2Spacing{
+    margin-bottom: 1rem;
+  }
+  .headersSpacing {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 5px;
+    margin-block-start: -0.5em;
+    margin-block-end: -0.5em;
+  }
+  .thumb {
+    width: auto;
+    height: 110px;
+    margin: 0px;
+  }
+}
+
+.thumbs {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.price {
+  color: rgb(165, 19, 19);
+  font-size: xx-large;
+  font-weight: bolder;
+  margin-bottom: 25px;
+}
+
+.descript, .myUL {
+  padding-left: 5px;
+  margin-block-start: -1.5em;
+  margin-block-end: -0.5em;
+  font-size: small;
+}
+
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .btnBuy {
+    border: 1px solid rgb(31, 22, 10);
+    border-radius: 6px;
+    width: 98%;
+    height: 2rem;
+    /* padding: 0.26rem; */
+    margin-left: 3px;
+    color: var(--fontColBtnBuy);
+    background-color: var(--bgColBtnBuy);
+    outline-offset: 0.3rem;
+    /* accessibility issue */
+  }
+
+  .btnBuy:hover {
+    background: #e1e1e1;
+    border: 1px solid var(--bgColBtnBuy);
+    color: var(--bgColBtnBuy);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .allWrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .descript, .myUL {
+    padding-left: 5px;
+    margin-block-start: 0.25em;
+    margin-block-end: 0.35em;
+    font-size: small;
+  }
+}

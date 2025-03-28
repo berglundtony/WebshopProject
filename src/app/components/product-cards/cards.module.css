@@ -1,0 +1,100 @@
+.cards {
+  display: grid;
+  gap: clamp(.2rem, 8vw, .8rem);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: clamp(.4rem, 4.5vw, 1rem);
+
+
+  .card {
+    background-color: var(--cardColor);
+    border: 1px solid var(--cardBorderColor);
+    padding: 0.5rem;
+    border-radius: 5px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: clamp(98%, 2vw, 100%);
+    /* max-width: 320px;
+    min-width: 280px; */
+
+    .imageWrapper {
+      display:flex;
+      justify-content: center;
+      .image {
+        width: auto;
+        height: 160px;
+        margin: 10px 0 210px 0;
+      }
+    }
+
+    .lowerHalf {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      height: auto;
+      position: absolute;
+      bottom: 5px;
+      width: 94%;
+      padding: 6px;
+      
+      .price {
+        color: rgb(165, 19, 19);
+        font-size: medium;
+        font-weight: bolder;
+        margin-bottom: 25px;
+      }
+      .btnWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+          
+        .btnBuy {
+          border: 1px solid rgb(31, 22, 10);
+          border-radius: 6px;
+          width: 98%; 
+          height: 2rem;
+          padding: 0.26rem;
+          color: var(--fontColBtnBuy);
+          background-color: var(--bgColBtnBuy);
+          outline-offset: 0.3rem; /* accessibility issue */
+        }
+
+        .btnBuy:hover {
+          background: #e1e1e1;
+          border: 1px solid var(--bgColBtnBuy);
+          color: var(--bgColBtnBuy);
+        }
+      }
+
+      .paraD {
+        display: inline-flex;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        margin-right: 0.5rem;
+      }
+
+      .paraSmall {
+        font-size: small;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .card {
+    transition: all 300ms;
+  }
+   
+  .card:hover {
+    border-radius: 5px;
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cards {
+    justify-items: center;
+    margin:1.5rem .5rem 0 .5rem;
+  }
+}

@@ -1,0 +1,134 @@
+.loadScreen {
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - 2rem);
+
+  background-image: url("/tube-spinnerdark.svg");
+  background-repeat: no-repeat;
+  background-position: calc(50vw - 6rem);
+  background-size: 12rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .loadScreen {
+    background-image: url("/tube-spinner.svg");
+  }
+
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+
+.allWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.iconsWrapper {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  margin: 1rem;
+}
+.discountWrapper{
+  display:flex;
+  justify-content: center;
+}
+
+.campaignWrapper {
+  display: flex;
+  gap: clamp(3.5rem, 2vw, 1rem);
+  margin: .2rem;
+
+  .imageWrapper {
+    display: flex;
+    justify-content: center;
+
+    .image {
+      display: block;
+      width: auto;
+      height: 230px;
+      margin: 1.5rem 0 0 .5rem;
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  border-radius: 5px;
+  width: 300px;
+  height: 453px;
+  margin: .6em .5rem 0 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Semi-transparent background */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.advertText {
+  color: red;
+  text-align: left;
+  font-size: clamp(1.5rem, 1.5vw, 2.5rem);
+  margin: 0 .1em 0 2.5rem;
+}
+
+.imageWrapper:hover .overlay {
+  opacity: 1;
+}
+
+.chosenProducts {
+  width: 80vw;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  a.primary:hover {
+    background: var(--button-primary-hover);
+    border-color: transparent;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .allWrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .campaignWrapper {
+    flex-direction: column;
+  }
+
+  .overlay {
+    width: 92%;
+    height: 300px;
+  }
+
+  .imageWrapper {
+    .image {
+      display: block;
+      width: auto;
+      height: 360px;
+    }
+  }
+
+  .chosenProducts {
+    width: 91vw;
+  }
+}

@@ -1,0 +1,148 @@
+/*---------------------------------------
+1. GENERAL STYLES
+---------------------------------------*/
+
+.topNavigationContainer {
+    background-color: rgb(37, 37, 34);
+    color: rgb(240, 233, 229);
+    padding-left: 22px;
+}
+
+
+.navIconsWrapper {
+    padding: 0 25px 0 15px;
+}
+
+.cartCount {
+    font-size: 12px;
+    vertical-align: middle;
+    margin-left: 1px;
+}
+
+.navLinksWrapper > *{
+    font-size: medium;
+    vertical-align: middle;
+    padding-top: .7rem;
+}
+
+
+/*---------------------------------------
+2. MOBILE DEFUALT <760px
+---------------------------------------*/
+
+@media (max-width: 760px) {
+    body {
+        padding-top: 75px;
+    }
+
+    .mobileViewContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        padding: 4px 4px;
+
+        background-color: rgb(14, 14, 14);
+        color: rgb(240, 239, 239);
+        z-index: 100;
+    }
+
+    .siteLogo {
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15rem;
+    }
+
+    .dropdownMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 3rem;
+        font-size: 1.75rem;
+
+        position: fixed;
+        left: 0px;
+        top: 60px;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(117, 113, 100);
+        color: rgb(240, 239, 239);
+        overflow: auto;
+        z-index: 50;
+        padding: 2rem 5rem
+    }
+
+    .loginLink {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .cartCount {
+        font-size: 1rem
+    }
+
+    .desktopViewContainer {
+        display: none;
+    }
+}
+
+/*---------------------------------------
+3. Desktop View - >940px
+---------------------------------------*/
+
+
+@media (min-width: 760px) {
+    .desktopViewContainer {
+        gap: 70px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        height: 60px;
+        padding-bottom: 6px;
+    }
+
+    .siteLogo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15rem;
+    }
+
+    .navLinksWrapper {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        gap: 2rem;
+        font-size: 1.5rem;
+    }
+
+
+    .navIconsWrapper {
+        display: flex;
+        flex: 1;
+        gap: 1.5rem;
+
+        width: 40%;
+        font-size: 1.5rem;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .loginLink {
+        font-size: .9rem;
+        text-align: center;
+    }
+
+    .mobileViewContainer {
+        display: none;
+    }
+}

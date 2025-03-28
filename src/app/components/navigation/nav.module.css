@@ -1,0 +1,8 @@
+.paginationNav {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}

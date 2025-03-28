@@ -1,0 +1,79 @@
+/* Katergorigrupper */
+.categoryGroup {
+  display: flex;
+  justify-content: start;
+  margin: 0 clamp(.1rem, 2vw, 2rem);
+}
+
+.tabs {
+  font-size: medium;
+  font-weight: 600;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.tabButton:hover {
+  background-color: #bbb;
+}
+
+/* Lista */
+.categoryList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  margin: 1rem;
+  gap: 5px;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    img {
+      margin: .5rem 0;
+      width: 35%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  li {
+    list-style-type: none;
+    padding: 5px;
+    border: 1px solid #5e5c5c;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  li:hover {
+    background-color: rgb(114, 102, 81);
+    color: black;
+  }
+
+  p {
+    margin-top: auto;
+  }
+}
+
+.laptops {
+  white-space: nowrap;
+  font-size: .8rem;
+  text-align: center;
+}
+
+.category,
+.kitchen_accessories,
+.mobile_accessories,
+.beauty {
+  font-size: .8rem;
+  text-align: center;
+  white-space: nowrap;
+}
