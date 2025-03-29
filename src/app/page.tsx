@@ -10,7 +10,7 @@ export default function Home() {
   const [state, setState] = useState({ products: [], total: 0 } as ProductResult);
   const [isDoneLoading, setIsDoneLoading] = useState(false);
   useEffect(() => {
-    const productIds: Array<string> = ["1", "2", "3", "8"];
+    const productIds: Array<string> = ["1", "2", "3", "8", "10","12","14"];
     getCampaignIds(productIds).then(n => {
       setState(n);
       setIsDoneLoading(true);
@@ -25,9 +25,7 @@ export default function Home() {
       <div className={styles.discountWrapper}>
         <h1 className={styles.advertText}>25% rabatt på föjande varor under Påsken!</h1>
       </div>
-      <div className={styles.chosenProducts}>
         <CampaignProductList products={state.products ?? []} />
-      </div>
     </div>
   );
 }

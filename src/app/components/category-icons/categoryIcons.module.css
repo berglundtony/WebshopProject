@@ -6,14 +6,15 @@
 }
 
 .tabs {
-  font-size: medium;
+  font-size: clamp(0.875rem, 2vw, 1.25rem);
   font-weight: 600;
   display: flex;
   gap: .5rem;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1300px;
+  max-width: 1800px;
   width: 100%;
+  color: var(--fontColBtnBuy);
 }
 
 .tabButton:hover {
@@ -34,8 +35,8 @@
     text-align: center;
 
     img {
-      margin: .5rem 0;
-      width: 35%;
+      margin: .3rem 0;
+      width: 13%;
       height: auto;
       object-fit: cover;
     }
@@ -44,18 +45,31 @@
   li {
     list-style-type: none;
     padding: 5px;
-    border: 1px solid #5e5c5c;
+    border: 1px solid var(--bgBtnBuyHover);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    height: 80px;
   }
 
   li:hover {
-    background-color: rgb(114, 102, 81);
+    background-color: rgb(179, 167, 147);
     color: black;
+  }
+
+  li.beauty {
+    img {
+      width: 30%;
+    }
+  }
+
+  li.woman {
+    img {
+      width: 30%;
+    }
   }
 
   p {

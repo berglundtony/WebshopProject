@@ -3,14 +3,13 @@
 ---------------------------------------*/
 
 .topNavigationContainer {
-    background-color: rgb(37, 37, 34);
+    background-color: var(--bgTopNavigation);
     color: rgb(240, 233, 229);
     padding-left: 22px;
 }
 
-
 .navIconsWrapper {
-    padding: 0 25px 0 15px;
+    padding: 0 25px 25px 15px;
 }
 
 .cartCount {
@@ -21,8 +20,7 @@
 
 .navLinksWrapper > *{
     font-size: medium;
-    vertical-align: middle;
-    padding-top: .7rem;
+    align-items: center;
 }
 
 
@@ -47,7 +45,7 @@
         height: 70px;
         padding: 4px 4px;
 
-        background-color: rgb(14, 14, 14);
+        background-color: var(--bgTopNavigation);
         color: rgb(240, 239, 239);
         z-index: 100;
     }
@@ -57,7 +55,6 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.15rem;
-        margin-left: 1rem;
     }
 
     .dropdownMenu {
@@ -72,7 +69,7 @@
         top: 60px;
         width: 100%;
         height: 100vh;
-        background-color: rgb(117, 113, 100);
+        background-color: var(--bgColBtnBuy);
         color: rgb(240, 239, 239);
         overflow: auto;
         z-index: 50;
@@ -108,7 +105,6 @@
 
         width: 100%;
         height: 60px;
-        padding-bottom: 6px;
     }
 
     .siteLogo {
@@ -124,15 +120,16 @@
         justify-content: center;
         gap: 2rem;
         font-size: 1.5rem;
+        align-items: center;
     }
 
 
     .navIconsWrapper {
         display: flex;
         flex: 1;
-        gap: 1.5rem;
+        gap: 1.5rem;margin-top: initial;
 
-        width: 40%;
+        /* width: 40%; */
         font-size: 1.5rem;
         justify-content: flex-end;
         align-items: center;

@@ -32,15 +32,15 @@
   width: 100%;
   padding: 6px 18px;
   outline: none;
-  background-color: rgb(223, 210, 187);
+  background-color: var(--bgColDropDown);
   color: rgb(100, 75, 75);
   text-align: left;
   font-size: 1rem;
 
-  border: none;
+  border: 1px solid var(--borderColBtnBuy);
   border-radius: 3px;
 
-  caret-color: white;
+  caret-color: var(--borderColBtnBuy);
   padding-right: 2.5rem;
 
 }
@@ -59,11 +59,11 @@
 /*  Dropdown */
 .dropdownContainer {
   position: absolute;
-  top:27px;
-  left: 0;
+  top:33px;
+  left: 9;
   flex-direction: column;
-  background-color: rgb(145, 130, 103);
-  width: 100%;
+  background-color: var(--bgsearchDropDown);
+  width: 95%;
   border-bottom: 1px solid rgb(196, 179, 179);
   z-index: 999
 }
@@ -78,12 +78,12 @@
 }
 
 .dropdownList:hover {
-  background: rgb(104, 103, 103);
+  background: var(--bgHoverDropDown);
   transition: background 1s;
 }
 
 .seeMoreResults {
-  color: rgb(255, 255, 255);
+  color: var(--borderColBtnBuy);
 }
 
 .seeMoreResults {
@@ -95,7 +95,7 @@
 }
 
 .seeMoreResults:hover {
-  background: rgb(104, 103, 103);
+  background: var(--bgColDropDown);
   transition: background 1s;
 
 }

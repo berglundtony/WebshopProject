@@ -252,7 +252,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Hudvård</p>
             </a>
           </li>
-          <li className={styles.woman} data-catagory-group={'woman'}>
+          <li className={styles.woman}>
             <a onClick={() => {
               router.push(`/products?filterBy=tops`);
             }}>
@@ -266,7 +266,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Toppar</p>
             </a>
           </li>
-          <li className={styles.woman} data-catagory-group={'woman'}>
+          <li className={styles.woman}>
             <a onClick={() => {
               router.push(`/products?filterBy=womens-dresses`);
             }}>
@@ -280,7 +280,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Klänningar</p>
             </a>
           </li>
-          <li className={styles.woman} data-catagory-group={'woman'}>
+          <li className={styles.woman}>
             <a onClick={() => {
               router.push(`/products?filterBy=womens-shoes`);
             }}>

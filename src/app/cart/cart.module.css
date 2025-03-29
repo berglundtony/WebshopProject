@@ -10,9 +10,9 @@
 h1.cartHead {
     text-align: center;
     padding: .5em 0 0 1em;
-    font-size: clamp(1.6rem, 2vw 2.2rem);
+    font-size: clamp(1.6rem, 2vw, 2.2rem);
     font-weight: 500;
-    color: var(--color-primary)
+    color: var(--color-bg-button);
 }
 
 .emptyCart {
@@ -36,6 +36,7 @@ h1.cartHead {
         display: block;
         width: 100%;
         padding-left: clamp(5px, 2vw, 20px);
+        color: var(--color-bg-button)
     }
 
     img {
@@ -71,7 +72,7 @@ h1.cartHead {
                 color: var(--color-primary);
                 font-size: clamp(.8rem, 2vw, .9rem);
                 font-weight: 400;
-            }
+            }    color: var(--color-bg-button);
         }
 
         .wasteBaskeBtn {
@@ -102,8 +103,7 @@ h1.cartHead {
         height: clamp(23px, 2vw, 26px);
         border-radius: 50%;
         border: none;
-        background-color: var(--color-bg-button);
-        color: var(--color-text-light);
+        background: #837a7a;
         cursor: pointer;
     }
 

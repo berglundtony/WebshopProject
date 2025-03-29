@@ -81,7 +81,7 @@
 }
 
 .advertText {
-  color: red;
+  color: #a94f4f;
   text-align: left;
   font-size: clamp(1.5rem, 1.5vw, 2.5rem);
   margin: 0 .1em 0 1.5rem;

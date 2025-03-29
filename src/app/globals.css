@@ -1,11 +1,20 @@
 :root {
   --background: rgb(230, 223, 211);
   --foreground: #171717;
-  --cardColor: rgb(221, 198, 156);
+  --bgTopNavigation: rgb(121, 113, 94);
+  --cardColor: rgb(220, 208, 185);
   --cardBorderColor: gray;
-  --bgColBtnDetails: rgb(105, 74, 33);
-  --bgColBtnBuy: rgb(172, 86, 15);
-  --fontColBtnBuy: aliceblue;
+  --bgColBtnDetails: rgb(139, 83, 10);
+  --bgColDropDown: rgb(189, 172, 148);
+  --bgsearchDropDown: rgb(164, 151, 130);
+  --bgHoverDropDown: rgb(133, 109, 66);
+  --bgColBtnBuy: rgb(179, 167, 147);
+  --bgBtnBuyHover: rgb(121, 113, 94);
+  --borderBtnBuyHover: rgb(17, 17, 15);
+  --colBtnBuyHover: rgb(230, 223, 210);
+  --fontColBtnBuy: rgb(49, 45, 37);
+  --borderColBtnBuy: rgb(108, 103, 94);
+  --colBtnBuy: rgb(72, 66, 55);
 }
 
 body {

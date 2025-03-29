@@ -1,5 +1,5 @@
 import style from "./star.module.css";
-export default function start(props: { score: number }) {
+export default function star(props: { score: number }) {
     const score = props.score;
     const frac = ((score / 5) * 100) + "%";
 

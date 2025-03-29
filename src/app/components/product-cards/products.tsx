@@ -44,9 +44,7 @@ export function Card({ product }: { product: Product }) {
               <span className={styles.price}>&euro;{product.price}</span>
             </div>
             <div>
-              <p className={styles.paraD}>Kundbetyg:</p>
-          
-              <Star score={product.rating}></Star>
+              <div className={styles.paraD}>Kundbetyg:<Star score={product.rating}></Star></div>
             </div>
             <p className={styles.paraSmall}>{product.description}</p>
           </div>

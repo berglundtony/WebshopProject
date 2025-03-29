@@ -141,7 +141,7 @@ export default function Search() {
                     className={`${styles.liveSeachItem} ${styles.seeMoreResults}`}
                     onMouseDown={handleSeeMoreResults}
                 >
-                <span>Visa fler resultat...</span>
+                <span>Visa alla resultat...</span>
               </li>
             </>
           ) : (
