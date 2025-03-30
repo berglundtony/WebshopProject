@@ -55,6 +55,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.15rem;
+        margin-left: 1rem;
     }
 
     .dropdownMenu {
@@ -112,6 +113,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.15rem;
+        margin-left: 1rem;
     }
 
     .navLinksWrapper {
@@ -129,7 +131,7 @@
         flex: 1;
         gap: 1.5rem;margin-top: initial;
 
-        /* width: 40%; */
+        padding-top: 1.4rem;
         font-size: 1.5rem;
         justify-content: flex-end;
         align-items: center;

@@ -23,7 +23,6 @@ body {
 
 main {
   flex: 1;
-  /* Gör att main tar upp all tillgänglig höjd */
 }
 
 @media (prefers-color-scheme: dark) {
