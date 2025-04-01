@@ -4,8 +4,6 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   margin: clamp(.4rem, 4.5vw, 1rem);
 
-
-
   .card {
     background-color: var(--cardColor);
     border: 1px solid var(--cardBorderColor);
@@ -35,7 +33,7 @@
       transition: opacity 0.5s ease;
     }
 
-    .imageWrapper:hover .overlay {
+    .card:hover .overlay {
       opacity: 1;
     }
 
@@ -49,8 +47,8 @@
 
       .image {
         width: auto;
-        height: 160px;
-        margin: 10px 0 160px 0;
+        height: 170px;
+        margin: -15px 0 180px 0;
       }
 
     }

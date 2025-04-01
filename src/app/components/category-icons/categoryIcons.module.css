@@ -11,8 +11,7 @@
   display: flex;
   gap: .5rem;
   flex-wrap: wrap;
-  justify-content: start;
-  height:1rem;
+  justify-content: space-between;
   max-width: 1800px;
   width: 100%;
   color: var(--fontColBtnBuy);
@@ -43,7 +42,13 @@
     }
   }
 
-  li.home, li.computing, li.vehicle, li.beauty, li.woman, li.men, li.sport {
+  li.home,
+  li.computing,
+  li.vehicle,
+  li.beauty,
+  li.woman,
+  li.men,
+  li.sports {
     list-style-type: none;
     padding: 5px;
     border: 1px solid var(--bgBtnBuyHover);
@@ -56,13 +61,13 @@
     height: 80px;
   }
 
-  li.home:hover, 
+  li.home:hover,
   li.computing:hover,
   li.vehicle:hover,
   li.beauty:hover,
   li.woman:hover,
   li.men:hover,
-  li.sport:hover {
+  li.sports:hover {
     background-color: rgb(179, 167, 147);
     color: black;
   }
