@@ -103,7 +103,7 @@ user-select: none;
   div.velcome, form#post {
     flex:auto;
     height: 2rem;
-    input {
+    input.emailInput {
       height: 100%;
     }
     button.emailButton {
