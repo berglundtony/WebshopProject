@@ -32,7 +32,7 @@ ul.cards {
 
     .overlay {
       position: absolute;
-      top: -10px;
+      top: -20px;
       left: -15px;
       padding-left: 2rem;
       border-radius: 5px;

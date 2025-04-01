@@ -76,7 +76,6 @@ export default function ProductsPage() {
           originalPrice: product.price,
           price: campaignProductIds.includes(product.id) ? Math.ceil(product.price * 0.75) : product.price,
         }));
-        console.log("Product:", n.products); 
         setState(n);
         setIsDoneLoading(true);
       } catch (error) {
