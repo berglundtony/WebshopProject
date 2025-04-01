@@ -59,6 +59,7 @@ export function ShowCampaingCategories() {
         activeTab === "home" && (
           <ul className={styles.categoryList}>
             <li className={styles.home}>
+            <li className={styles.home}>
               <a className={styles.href} onClick={() => {
                 router.push(`/products?filterBy=furniture`);
               }}>
@@ -73,6 +74,7 @@ export function ShowCampaingCategories() {
               </a>
             </li>
             <li className={styles.home}>
+            <li className={styles.home}>
               <a className={styles.href} onClick={() => {
                 router.push(`/products?filterBy=home-decoration`);
               }}>
@@ -86,6 +88,7 @@ export function ShowCampaingCategories() {
                 <p className={styles.category}>Hemdekoration</p>
               </a>
             </li>
+            <li className={styles.home}>
             <li className={styles.home}>
               <a className={styles.href} onClick={() => {
                 router.push(`/products?filterBy=kitchen-accessories`);
@@ -119,6 +122,7 @@ export function ShowCampaingCategories() {
       {activeTab === "electronics" && (
         <ul className={styles.categoryList}>
           <li className={styles.computing}>
+          <li className={styles.computing}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=laptops`);
             }}>
@@ -132,6 +136,7 @@ export function ShowCampaingCategories() {
               <p className={styles.laptops}>Bärbara datorer</p>
             </a>
           </li>
+          <li className={styles.computing}>
           <li className={styles.computing}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=tablets`);
@@ -147,6 +152,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.computing}>
+          <li className={styles.computing}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=cell-phone`);
             }}>
@@ -160,6 +166,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Mobiler</p>
             </a>
           </li>
+          <li className={styles.computing}>
           <li className={styles.computing}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=mobile-accessories`);
@@ -179,6 +186,7 @@ export function ShowCampaingCategories() {
       {activeTab === "vehicle" && (
         <ul className={styles.categoryList}>
           <li className={styles.vehicle}>
+          <li className={styles.vehicle}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=motorcycle`);
             }}>
@@ -192,6 +200,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Motorcyklar</p>
             </a>
           </li>
+          <li className={styles.vehicle}>
           <li className={styles.vehicle}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=vehicle`);
@@ -211,6 +220,7 @@ export function ShowCampaingCategories() {
       {activeTab === "woman" && (
         <ul className={styles.categoryList}>
           <li className={styles.beauty}>
+          <li className={styles.beauty}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=beauty`);
             }}>
@@ -225,6 +235,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.beauty}>
+          <li className={styles.beauty}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=fragrances`);
             }}>
@@ -238,6 +249,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Parfym</p>
             </a>
           </li>
+          <li className={styles.beauty}>
           <li className={styles.beauty}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=skin-care`);

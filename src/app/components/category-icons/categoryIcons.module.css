@@ -2,7 +2,7 @@
 .categoryGroup {
   display: flex;
   justify-content: start;
-  margin: 0 clamp(.1rem, 2vw, 2rem);
+  margin: clamp(.1rem, 2vw, 2rem);
 }
 
 .tabs {
@@ -11,7 +11,8 @@
   display: flex;
   gap: .5rem;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
+  height:1rem;
   max-width: 1800px;
   width: 100%;
   color: var(--fontColBtnBuy);
@@ -42,7 +43,7 @@
     }
   }
 
-  li.home, li.vehicle, li.computing, li.beauty, li.woman, li.men, li.sports {
+  li.home, li.computing, li.vehicle, li.beauty, li.woman, li.men, li.sport {
     list-style-type: none;
     padding: 5px;
     border: 1px solid var(--bgBtnBuyHover);
@@ -56,12 +57,12 @@
   }
 
   li.home:hover, 
-  li.vehicle:hover,
   li.computing:hover,
+  li.vehicle:hover,
   li.beauty:hover,
   li.woman:hover,
   li.men:hover,
-  li.sports:hover {
+  li.sport:hover {
     background-color: rgb(179, 167, 147);
     color: black;
   }

@@ -1,8 +1,10 @@
 .cards {
+.cards {
   display: grid;
   gap: clamp(.1rem, 4vw, .4rem);
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   margin: clamp(.4rem, 4.5vw, 1rem);
+
 
 
   .card {
@@ -116,6 +118,28 @@
       font-size: 1rem;
       margin-left: .3rem
     }
+    .price {
+      margin-bottom: .5rem;
+      font-size: medium;
+    }
+   
+      .prices {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+        margin-bottom: .5rem;
+      }
+
+      .oldPrice {
+        text-decoration: line-through;
+        color: gray;
+        font-weight: 200;
+      }
+
+      .discountedPrice {
+        color: rgb(165, 19, 19);
+        font-weight: bolder;
+      }
 
     .btnWrapper {
       display: flex;

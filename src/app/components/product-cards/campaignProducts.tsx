@@ -30,7 +30,7 @@ export function Card({ product }: { product: Product }) {
         <li className={styles.card} aria-label={`Länk till ${product.title}`}>
             <a onClick={(e) => {
                 e.stopPropagation();
-                router.push(`/products/${product.id}?discountedPrice=${encodeURIComponent(String(discountedPrice))}`);
+                router.push(`/products/${product.id}`);
             }} className={styles.cardLink}>
 
                 <h2>{product.title}</h2>
@@ -57,6 +57,18 @@ export function Card({ product }: { product: Product }) {
                         </p>
                         <p className={styles.paraSmall}>{product.description}</p>
                     </div>
+                    <div>
+                        <div className={styles.prices}>
+                            <span className={styles.oldPrice}>Förr: &euro;{product.price}</span>
+                            <span className={styles.discountedPrice}>Nu &euro;{discountedPrice}</span>
+                        </div>
+
+                        <p className={styles.paraD}>Kundbetyg:&nbsp;&nbsp; {Array.from({ length: Math.round(product.rating) }, (_, i) => (
+                            <Star key={i} className={styles.star} />
+                        ))}
+                        </p>
+                        <p className={styles.paraSmall}>{product.description}</p>
+                    </div>
                     <div className={styles.btnWrapper}>
                         <button
                             className={styles.btnBuy}
@@ -64,7 +76,7 @@ export function Card({ product }: { product: Product }) {
                             onClick={(e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
-                                addToCart({ ...product, price: discountedPrice });
+                                addToCart(product);
                             }}
                         >
                             Lägg i varukorg
