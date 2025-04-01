@@ -21,7 +21,7 @@ h1.cartHead {
     padding: clamp(.2rem, 1vw, .6rem);
     border-bottom: 1px solid var(--color-border);
 
-    .title {
+    a.title {
         font-size: clamp(0.8rem, 2.1vw, 1.2rem);
         text-align: left;
         display: block;
@@ -29,7 +29,7 @@ h1.cartHead {
         padding-left: clamp(5px, 2vw, 20px);
         color: var(--color-bg-button)
     }
-    a:hover{
+    a.title:hover{
         text-decoration-line: underline;
         cursor:pointer;
     }
