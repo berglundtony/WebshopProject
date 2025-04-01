@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function ProductDetail({params,
 }: {
-        params: { Id: string } 
+        params: Promise<{ Id: string }>;
 }) {
     const [product, setProduct] = useState<Product | undefined>(undefined);
     const [loading, setLoading] = useState(true);
