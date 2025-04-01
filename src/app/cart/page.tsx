@@ -41,7 +41,7 @@ export default function CartPage() {
                                         onClick={() => decrementCartItem(item.id)}
                                         aria-label={`Minska antal av ${item.title}`}
                                     >-</button>
-                                    <span>{item.quantity}</span>
+                                    <span className={styles.quantity}>{item.quantity}</span>
                                     <button className={styles.incrementCartItem} onClick={() => incrementCartItem(item.id)}
                                         aria-label={`Öka antal av ${item.title}`}
                                     >+</button>

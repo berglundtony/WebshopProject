@@ -2,7 +2,7 @@
 .categoryGroup {
   display: flex;
   justify-content: start;
-  margin: 0 clamp(.1rem, 2vw, 2rem);
+  margin: clamp(.1rem, 2vw, 2rem);
 }
 
 .tabs {
@@ -11,7 +11,8 @@
   display: flex;
   gap: .5rem;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
+  height:1rem;
   max-width: 1800px;
   width: 100%;
   color: var(--fontColBtnBuy);
@@ -35,14 +36,14 @@
     text-align: center;
 
     img.product {
-      margin: .3rem 0;
-      width: clamp(8%, 4vw, 12%);
+      margin: .8rem 0;
+      width: clamp(2%, 20vw, 18%);
       height: auto;
       object-fit: cover;
     }
   }
 
-  li {
+  li.home, li.computing, li.vehicle, li.beauty, li.woman, li.men, li.sport {
     list-style-type: none;
     padding: 5px;
     border: 1px solid var(--bgBtnBuyHover);
@@ -55,7 +56,13 @@
     height: 80px;
   }
 
-  li:hover {
+  li.home:hover, 
+  li.computing:hover,
+  li.vehicle:hover,
+  li.beauty:hover,
+  li.woman:hover,
+  li.men:hover,
+  li.sport:hover {
     background-color: rgb(179, 167, 147);
     color: black;
   }
