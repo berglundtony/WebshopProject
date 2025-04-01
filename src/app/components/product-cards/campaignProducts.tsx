@@ -57,18 +57,6 @@ export function Card({ product }: { product: Product }) {
                         </p>
                         <p className={styles.paraSmall}>{product.description}</p>
                     </div>
-                    <div>
-                        <div className={styles.prices}>
-                            <span className={styles.oldPrice}>Förr: &euro;{product.price}</span>
-                            <span className={styles.discountedPrice}>Nu &euro;{discountedPrice}</span>
-                        </div>
-
-                        <p className={styles.paraD}>Kundbetyg:&nbsp;&nbsp; {Array.from({ length: Math.round(product.rating) }, (_, i) => (
-                            <Star key={i} className={styles.star} />
-                        ))}
-                        </p>
-                        <p className={styles.paraSmall}>{product.description}</p>
-                    </div>
                     <div className={styles.btnWrapper}>
                         <button
                             className={styles.btnBuy}
