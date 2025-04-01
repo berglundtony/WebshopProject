@@ -3,6 +3,7 @@ import "./globals.css";
 import { CartProvider } from "./cartprovider";
 import TopNavigation from './components/top-navigation/TopNavigation'; 
 import Footer from "./components/footer/Footer";
+import styles from './components/top-navigation/topNavigation.module.css';
 
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <CartProvider>
-        <body className="top">
+        <body className={styles.top}>
         <TopNavigation/>
         <main>{children}</main>
         <Footer/>

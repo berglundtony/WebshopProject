@@ -1,146 +1,116 @@
-ul.cards {
+.cards {
   display: grid;
-  gap: clamp(.2rem, 8vw, .8rem);
+  gap: clamp(.1rem, 4vw, .4rem);
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   margin: clamp(.4rem, 4.5vw, 1rem);
-  list-style: none;
+
 
   .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    height: auto;
-    min-height: 100%;
     background-color: var(--cardColor);
     border: 1px solid var(--cardBorderColor);
     padding: 0.5rem;
     border-radius: 5px;
     position: relative;
-    width: clamp(90%, 78vw, 95%);
-    overflow: hidden;
-
-    h2.title{
-      height: 60px;
-    }
-
-    .campaignWrapper {
-      display: flex;
-      gap: clamp(3.5rem, 2vw, 1rem);
-      margin: .2rem;
-    }
-
-    .overlay {
-      position: absolute;
-      top: -20px;
-      left: -15px;
-      padding-left: 2rem;
-      border-radius: 5px;
-      width: 100%;
-      height: 400px;
-      margin: .6em .5rem 0 1rem;
-      background-color: rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: flex-start;
-      opacity: 0;
-      transition: opacity 0.9s ease;
-
-      h1.discount {
-        margin-top: 4rem;
-        text-align: left;
-        color: rgba(255, 255, 255, 0.9);
-      }
-    }
+    justify-content: center;
+    align-items: center;
+    width: clamp(98%, 2vw, 100%);
+    /* max-width: 320px;
+    min-width: 280px; */
 
     .imageWrapper {
-      flex-shrink: 0;
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 130px;
-      max-height: 100%;
 
       .image {
-        width: 100%;
-        height: auto;
-        max-height: 130px;
-        object-fit: contain;
+        width: auto;
+        height: 160px;
+        margin: 10px 0 160px 0;
       }
     }
 
     .lowerHalf {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 1;
-      gap: 1.4rem;
-      width: 100%;
-      min-height: 285px;
+      gap: 0rem;
+      height: auto;
+      position: absolute;
+      bottom: 1px;
+      width: 94%;
       padding: 6px;
 
-      .price {
-        font-size: large;
+      .paraD {
+        display: inline-flex;
+        margin-right: 0.5rem;
+
+        .star {
+          margin-top: .1rem;
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .paraD {
+        display: inline-flex;
+        font-weight: bold;
+        margin-bottom: .3rem;
+        margin-right: 0.5rem;
+      }
+
+      .paraSmall {
+        font-size: small;
+        margin-bottom: 1rem;
+      }
+
+      .paraDiscount {
+        color: gray;
+        display: inline-flex;
+        margin-right: 0.5rem;
       }
 
       .prices {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        margin-bottom: .1rem;
+      }
 
-        .oldPrice {
-          text-decoration: line-through;
-          color: gray;
-          font-size: large;
-          font-weight: 200;
-        }
+      .oldPrice {
+        text-decoration: line-through;
+        color: gray;
+        font-weight: 200;
+      }
 
-        .discountedPrice {
-          color: rgb(165, 19, 19);
-          font-size: large;
-          font-weight: bolder;
-        }
-
-        .paraDiscount {
-          color: gray;
-          display: inline-flex;
-          margin-right: 0.5rem;
-        }
-
-        .paraD {
-          display: inline-flex;
-          margin-right: 0.5rem;
-        }
-
-        .paraSmall {
-          font-size: small;
-          margin-bottom: .5rem;
-        }
+      .discountedPrice {
+        color: rgb(165, 19, 19);
+        font-weight: bolder;
       }
 
       .btnWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
-        margin-top: auto;
 
         .btnBuy {
           border: 1px solid rgb(31, 22, 10);
           border-radius: 6px;
-          width: 100%;
+          width: 98%;
           height: 2rem;
           padding: 0.26rem;
           color: var(--fontColBtnBuy);
           background-color: var(--bgColBtnBuy);
           outline-offset: 0.3rem;
+          /* accessibility issue */
         }
 
         .btnBuy:hover {
-          background: var(--bgBtnBuyHover);
-          border: 1px solid var(--borderBtnBuyHover);
-          color: var(--colBtnBuyHover);
+          background: #e1e1e1;
+          border: 1px solid var(--bgColBtnBuy);
+          color: var(--bgColBtnBuy);
         }
       }
     }
   }
-
 
   .card {
     transition: all 300ms;
@@ -151,15 +121,6 @@ ul.cards {
     transform: scale(1.03);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   }
-
-  .card:hover .overlay {
-    opacity: 1;
-  }
-}
-
-.star {
-  width: 16px;
-  height: 16px;
 }
 
 @media screen and (max-width: 400px) {

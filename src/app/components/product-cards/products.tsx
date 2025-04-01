@@ -36,30 +36,30 @@ export function Card({ product }: { product: Product }) {
           <h2 className={styles.title}>{product.title}</h2>
           <div className={styles.imageWrapper}>
             <Image
-            className={styles.image}
-            src={product.images[0]}
-            width={80}
-            height={80}
-            alt={`Image of ${product.title}`}
+              className={styles.image}
+              src={product.images[0]}
+              width={80}
+              height={80}
+              alt={`Image of ${product.title}`}
             />
           </div>
-        <div className={styles.lowerHalf}>
-          {product.originalPrice !== product.price ? (
-            <div className={styles.prices}>
-              <p className={styles.oldPrice}>
-                <span className={styles.paraD}> Förr:</span>&euro;{product.originalPrice}
-              </p>
-              <p className={styles.discountedPrice}>
-                <span className={styles.paraD}> Nu:</span>&euro;{product.price}
-              </p>
-            </div>
-          ) : (
-            <p className={styles.price}>&euro; {product.price}</p>
-          )}
-
-          <div className={styles.paraD}>Kundbetyg:<Star score={product.rating}></Star></div>
-          <p className={styles.paraSmall}>{product.description}</p>
-          <div className={styles.btnWrapper}>
+          <div className={styles.lowerHalf}>
+            {product.originalPrice !== product.price ? (
+              <div className={styles.prices}>
+                <p className={styles.oldPrice}>
+                  <span className={styles.paraD}> Förr:</span>&euro;{product.originalPrice}
+                </p>
+                <p className={styles.discountedPrice}>
+                  <span className={styles.paraD}> Nu:</span>&euro;{product.price}
+                </p>
+              </div>
+            ) : (
+              <p className={styles.price}>&euro; {product.price}</p>
+            )}
+            <div className={styles.paraD}>Kundbetyg:<Star score={product.rating}></Star></div>
+            <p className={styles.paraSmall}>{product.description}</p>
+            <div>
+              <div className={styles.btnWrapper}>
             <button
               className={styles.btnBuy}
               aria-label={`knapp för köp`}
@@ -70,7 +70,8 @@ export function Card({ product }: { product: Product }) {
               }}
             >
               Lägg i varukorg
-              </button>
+                </button>
+              </div>
             </div>
           </div>
         </div>
