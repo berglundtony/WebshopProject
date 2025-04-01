@@ -47,13 +47,13 @@ h1.cartHead {
         gap: 5px;
         padding: 10px;
 
-        h3 {
+        h2.itemPrice {
             font-size: clamp(1rem, 1.2rem, 1.3rem);
             font-weight: 500;
             color: var(--color-primary)
         }
 
-        h2 {
+        h2.price {
             width: fit-content;
             height: 35px;
             color: var(--color-primary);
