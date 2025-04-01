@@ -120,11 +120,7 @@ async function unRegister(email: string, key: string): Promise<TransactionResult
 }
 
 export default function NyhetsbrevPage() {
-  const postForm = async (e: FormData) => {
-    const email = e.get("email");
-    if (!email) return;
-    await register(email.toString());
-  };
+  // Removed duplicate declaration of postForm
 
   const [message, setMessage] = useState("");
 
@@ -158,6 +154,12 @@ export default function NyhetsbrevPage() {
       });
     }
   }, [key, email, action]);
+
+  const postForm = async (e: FormData) => {
+    const email = e.get("email");
+    if (!email) return;
+    await register(email.toString());
+  };
 
 
 
