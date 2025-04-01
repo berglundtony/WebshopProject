@@ -17,32 +17,79 @@
     /* max-width: 320px;
     min-width: 280px; */
 
+  
+
     .imageWrapper {
       display: flex;
       justify-content: center;
 
       .image {
         width: auto;
-        height: 160px;
-        margin: 10px 0 210px 0;
+        height: 120px;
+        margin: 10px 0 200px 0;
       }
     }
 
     .lowerHalf {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.1rem;
       height: auto;
       position: absolute;
-      bottom: 5px;
+      bottom: 3px;
       width: 94%;
       padding: 6px;
 
-      .price {
+      .paraD {
+        display: inline-flex;
+        margin-right: 0.5rem;
+
+        .star {
+          margin-top: .1rem;
+          width: 16px;
+          height: 16px;
+        }
+      }
+         
+      .paraD {
+        display: inline-flex;
+        font-weight: bold;
+        margin-bottom: 0.1rem;
+        margin-right: 0.5rem;
+      }
+
+      .paraSmall {
+        font-size: small;
+        margin-bottom: 1rem;
+      }
+
+      .paraDiscount {
+        color: gray;
+        display: inline-flex;
+        margin-right: 0.5rem;
+      }
+
+    .price {
+      margin-bottom: .5rem;
+      font-size: medium;
+    }
+   
+      .prices {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+        margin-bottom: .5rem;
+      }
+
+      .oldPrice {
+        text-decoration: line-through;
+        color: gray;
+        font-weight: 200;
+      }
+
+      .discountedPrice {
         color: rgb(165, 19, 19);
-        font-size: medium;
         font-weight: bolder;
-        margin-bottom: 25px;
       }
 
       .btnWrapper {
@@ -69,20 +116,12 @@
           color: var(--bgColBtnBuy);
         }
       }
-
-      .paraD {
-        display: inline-flex;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        margin-right: 0.5rem;
-      }
-
-      .paraSmall {
-        font-size: small;
-        margin-bottom: 1rem;
-      }
+    }
+    h2.title{
+      margin-bottom: -1rem;
     }
   }
+  
 
   .card {
     transition: all 300ms;

@@ -45,15 +45,15 @@ export function Card({ product }: { product: Product }) {
                 </div>
                 <div className={styles.lowerHalf}>
                     <div>
-                        <div>
-                            <p className={styles.paraD}>Pris:
-                                <span className={styles.price}>&euro;{discountedPrice}</span>
-                            </p>
+                        <div className={styles.prices}>
+                            <span className={styles.oldPrice}>Förr: &euro;{product.price}</span>
+                            <span className={styles.discountedPrice}>Nu &euro;{discountedPrice}</span>
                         </div>
-                        <div>
-                            <p className={styles.paraD}>Kundbetyg:</p>
-                            {product.rating} av 5
-                        </div>
+
+                        <p className={styles.paraD}>Kundbetyg:&nbsp;&nbsp; {Array.from({ length: Math.round(product.rating) }, (_, i) => (
+                            <Star key={i} className={styles.star} />
+                        ))}
+                        </p>
                         <p className={styles.paraSmall}>{product.description}</p>
                     </div>
                     <div className={styles.btnWrapper}>

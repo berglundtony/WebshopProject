@@ -36,8 +36,8 @@
     text-align: center;
 
     img.product {
-      margin: .8rem 0;
-      width: clamp(2%, 20vw, 18%);
+      margin: .3rem 0;
+      width: clamp(10%, 20vw, 16%);
       height: auto;
       object-fit: cover;
     }

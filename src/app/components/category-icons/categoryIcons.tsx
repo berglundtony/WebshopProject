@@ -386,7 +386,7 @@ export function ShowCampaingCategories() {
       )}
       {activeTab === "sport" && (
         <ul className={styles.categoryList}>
-          <li className='sports' data-categories={'sports-accessories'} data-catagory-group={'sports'}>
+          <li className={styles.sport}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=sports-accessories`);
             }}>
@@ -401,7 +401,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Sportartiklar</p>
             </a>
           </li>
-          <li className={styles.men} data-catagory-group={'spots'}>
+          <li className={styles.sport}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=sunglasses`);
             }}>
