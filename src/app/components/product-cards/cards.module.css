@@ -131,14 +131,16 @@ ul.cards {
           background-color: var(--bgColBtnBuy);
           outline-offset: 0.3rem;
         }
+
+        .btnBuy:hover {
+          background: var(--bgBtnBuyHover);
+          border: 1px solid var(--borderBtnBuyHover);
+          color: var(--colBtnBuyHover);
+        }
       }
     }
 
-    .btnBuy:hover {
-      background: var(--bgBtnBuyHover);
-      border: 1px solid var(--borderBtnBuyHover);
-      color: var(--colBtnBuyHover);
-    }
+
   }
 
 

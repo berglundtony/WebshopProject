@@ -5,7 +5,7 @@ import Image from "next/image";
 import { generateUniqueId } from "@/app/actions";
 import { useCart } from "@/app/cartprovider";
 import { Inter } from 'next/font/google'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 const inter = Inter({ subsets: ['latin'] });
@@ -15,8 +15,24 @@ export default function ProductDetails({ product }: { product: Product }) {
     const { addToCart } = useCart();
     const [selectedImage, setSelectedImage] = useState(product.images[0]);
     const params = useSearchParams();
-    const discountedPrice = params.get("discountedPrice");
-    const finalPrice = discountedPrice ? parseFloat(discountedPrice) : product.price;
+
+    const [finalPrice, setFinalPrice] = useState(product.price);
+    useEffect(() => {
+        const discountedPrice = params.get("discountedPrice");
+        const cartPrice = params.get("price");
+
+        const cartPriceValue = cartPrice ? parseFloat(cartPrice) : product.price;
+        const discountedPriceValue = discountedPrice ? parseFloat(discountedPrice) : undefined;
+   
+        const newPrice =
+            discountedPriceValue !== undefined
+                ? discountedPriceValue
+                : cartPriceValue !== product.price
+                    ? cartPriceValue
+                    : product.price;
+        setFinalPrice(newPrice);
+    }, [params, product.price]);
+
     return (
         <div className={inter.className}>
             <div className={styles.allWrapper}>
@@ -29,12 +45,12 @@ export default function ProductDetails({ product }: { product: Product }) {
                         alt={`Image of ${product.title}`}
                     />
 
-                    {discountedPrice ? (
+                    {finalPrice !== product.price ? (
                         <div className={styles.prices}>
                             <span className={styles.oldPrice}>Förr: &euro;{product.price}</span>
                             <span className={styles.newPrice}>Nu: &euro;{finalPrice}</span>
                         </div>
-                    ) : (<span className={styles.price}>&euro;{product.price}</span>
+                    ) : (<><span className={styles.price}>&euro;{finalPrice}</span><br /></>
                     )}
                     <div className={styles.btnWrapper}>
                         <button

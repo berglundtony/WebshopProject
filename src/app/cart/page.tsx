@@ -20,15 +20,15 @@ export default function CartPage() {
             {cartItems.length === 0 ? <h2 className={styles.emptyCart}>Kundvagnen är tom.</h2> : null}
             <ul className={styles.cartList}>
                 {
-                    cartItems.map((item: CartItem) => (
-                        <li key={item.id} className={styles.cardCart}>
+                    cartItems.map((item: CartItem, index: number) => (
+                        <li key={`${item.id}-${index}`} className={styles.cardCart}>
                             <Image
                                 src={item.images[0]}
                                 alt={item.title}
                                 width={200}
                                 height={200} />
-                            <a onClick={() => {
-                                router.push(`/products/${item.id}`)
+                            <a className={styles.title} onClick={() => {
+                                router.push(`/products/${item.id}?price=${item.price}`)
                             }}>
                                 {item.title}
                             </a>

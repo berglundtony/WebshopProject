@@ -127,9 +127,9 @@
   }
 
   .btnBuy:hover {
-    background: #e1e1e1;
-    border: 1px solid var(--bgColBtnBuy);
-    color: var(--bgColBtnBuy);
+    background: var(--bgBtnBuyHover);
+    border: 1px solid var(--borderBtnBuyHover);
+    color: var(--colBtnBuyHover);
   }
 }
 

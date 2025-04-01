@@ -11,11 +11,11 @@ export function CartProvider({ children }: { children: ReactNode; }) {
 
     const addToCart = (product: Product) => {
         setCartItems((prev) => {
-            const existingIndex = prev.findIndex((item) => item.id === product.id);
-            if (existingIndex !== -1) {
-                return prev.map((item, index) =>
-                    index === existingIndex
-                        ? { ...item, quantity: item.quantity + 1, price: item.price + product.price } 
+            const existingItem = prev.find((item) => item.id === product.id);
+            if (existingItem) {
+                return prev.map((item) =>
+                    item.id === product.id
+                        ? { ...item, quantity: item.quantity + 1, price: item.price} 
                         : item
                 );
             } else {
