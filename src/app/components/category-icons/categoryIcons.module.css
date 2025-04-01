@@ -36,13 +36,13 @@
 
     img.product {
       margin: .3rem 0;
-      width: clamp(16%, 4vw, 16%);
+      width: clamp(8%, 4vw, 16%);
       height: auto;
       object-fit: cover;
     }
   }
 
-  li {
+  li.home, li.vehicle, li.computing, li.beauty, li.woman, li.men, li.sports {
     list-style-type: none;
     padding: 5px;
     border: 1px solid var(--bgBtnBuyHover);
@@ -55,20 +55,26 @@
     height: 80px;
   }
 
-  li:hover {
+  li.home:hover, 
+  li.vehicle:hover,
+  li.computing:hover,
+  li.beauty:hover,
+  li.woman:hover,
+  li.men:hover,
+  li.sports:hover {
     background-color: rgb(179, 167, 147);
     color: black;
   }
 
   li.beauty {
-    img {
-      width: 30%;
+    img.product {
+      width: 25%;
     }
   }
 
   li.woman {
-    img {
-      width: 30%;
+    img.product {
+      width: 25%;
     }
   }
 

@@ -13,9 +13,34 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    width: clamp(98%, 2vw, 100%);
-    /* max-width: 320px;
-    min-width: 280px; */
+    width: clamp(95%, 2vw, 100%);
+    margin-bottom: .7rem;
+
+    .overlay {
+      position: absolute;
+      top: -10px;
+      left: -15px;
+      border-radius: 5px;
+      width: 370px;
+      height: 383px;
+      margin: .6em .5rem 0 1rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Semi-transparent background */
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .imageWrapper:hover .overlay {
+      opacity: 1;
+    }
+
+    h2.title {
+      font-size: 1.2rem;
+    }
 
     .imageWrapper {
       display: flex;
@@ -26,102 +51,142 @@
         height: 160px;
         margin: 10px 0 160px 0;
       }
+
+    }
+  }
+
+  .lowerHalf {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    height: auto;
+    position: absolute;
+    bottom: 1px;
+    width: 94%;
+    padding: 6px;
+
+    .paraD {
+      display: inline-flex;
+      margin-right: 0.5rem;
+
+      .star {
+        width: 16px;
+        height: 16px;
+      }
     }
 
-    .lowerHalf {
+    .price {
+      margin: .3rem 0 .3rem 0;
+    }
+
+    .paraD {
+      display: inline-flex;
+      font-weight: 600;
+      margin: .3rem .4rem .3rem 0;
+      font-size: 1rem;
+    }
+
+    .paraSmall {
+      font-size: small;
+      margin-bottom: 1rem;
+    }
+
+    .paraDiscount {
+      color: gray;
+      display: inline-flex;
+      margin-right: 0.5rem;
+    }
+
+    .prices {
       display: flex;
-      flex-direction: column;
-      gap: 0rem;
-      height: auto;
-      position: absolute;
-      bottom: 1px;
-      width: 94%;
-      padding: 6px;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: .1rem;
+    }
 
-      .paraD {
-        display: inline-flex;
-        margin-right: 0.5rem;
+    .oldPrice {
+      text-decoration: line-through;
+      color: gray;
 
-        .star {
-          margin-top: .1rem;
-          width: 16px;
-          height: 16px;
-        }
+    }
+
+    .discountedPrice {
+      color: rgb(165, 19, 19);
+      font-weight: 600;
+      font-size: 1rem;
+      margin-left: .3rem
+    }
+
+    .btnWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .btnBuy {
+        border: 1px solid rgb(31, 22, 10);
+        border-radius: 6px;
+        width: 98%;
+        height: 2rem;
+        padding: 0.26rem;
+        color: var(--fontColBtnBuy);
+        background-color: var(--bgColBtnBuy);
+        outline-offset: 0.3rem;
+        /* accessibility issue */
       }
 
-      .paraD {
-        display: inline-flex;
-        font-weight: bold;
-        margin-bottom: .3rem;
-        margin-right: 0.5rem;
-      }
-
-      .paraSmall {
-        font-size: small;
-        margin-bottom: 1rem;
-      }
-
-      .paraDiscount {
-        color: gray;
-        display: inline-flex;
-        margin-right: 0.5rem;
-      }
-
-      .prices {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-bottom: .1rem;
-      }
-
-      .oldPrice {
-        text-decoration: line-through;
-        color: gray;
-        font-weight: 200;
-      }
-
-      .discountedPrice {
-        color: rgb(165, 19, 19);
-        font-weight: bolder;
-      }
-
-      .btnWrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-
-        .btnBuy {
-          border: 1px solid rgb(31, 22, 10);
-          border-radius: 6px;
-          width: 98%;
-          height: 2rem;
-          padding: 0.26rem;
-          color: var(--fontColBtnBuy);
-          background-color: var(--bgColBtnBuy);
-          outline-offset: 0.3rem;
-          /* accessibility issue */
-        }
-
-        .btnBuy:hover {
-          background: #e1e1e1;
-          border: 1px solid var(--bgColBtnBuy);
-          color: var(--bgColBtnBuy);
-        }
+      .btnBuy:hover {
+        background: var(--bgBtnBuyHover);
+        border: 1px solid var(--borderBtnBuyHover);
+        color: var(--colBtnBuyHover);
       }
     }
-  }
-
-  .card {
-    transition: all 300ms;
-  }
-
-  .card:hover {
-    border-radius: 5px;
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   }
 }
+
+.loadScreen {
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - 2rem);
+
+  background-image: url("/tube-spinnerdark.svg");
+  background-repeat: no-repeat;
+  background-position: calc(50vw - 6rem);
+  background-size: 12rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .loadScreen {
+    background-image: url("/tube-spinner.svg");
+  }
+
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+
+.campaignWrapper {
+  display: flex;
+  gap: clamp(.5rem, 2vw, 1rem);
+  margin: .2rem;
+
+}
+
+.card {
+  transition: all 300ms;
+}
+
+.card:hover {
+  border-radius: 5px;
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
 
 @media screen and (max-width: 400px) {
   .cards {

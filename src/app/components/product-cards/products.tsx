@@ -47,10 +47,10 @@ export function Card({ product }: { product: Product }) {
             {product.originalPrice !== product.price ? (
               <div className={styles.prices}>
                 <p className={styles.oldPrice}>
-                  <span className={styles.paraD}> Förr:</span>&euro;{product.originalPrice}
+                  <span className={styles.paraD}> Förr: </span>&euro;{product.originalPrice}
                 </p>
                 <p className={styles.discountedPrice}>
-                  <span className={styles.paraD}> Nu:</span>&euro;{product.price}
+                  <span className={styles.paraD}> Nu: </span>&euro;{product.price}
                 </p>
               </div>
             ) : (

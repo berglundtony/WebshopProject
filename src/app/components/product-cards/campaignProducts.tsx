@@ -25,12 +25,12 @@ export function Card({ product }: { product: Product }) {
     const { addToCart } = useCart();
     const router = useRouter();
     const discountedPrice = DiscountedPrice(product);
-   
+
     return (
         <li className={styles.card} aria-label={`Länk till ${product.title}`}>
             <a onClick={(e) => {
                 e.stopPropagation();
-                router.push(`/products/${product.id}?${discountedPrice}`);
+                router.push(`/products/${product.id}?discountedPrice=${encodeURIComponent(String(discountedPrice))}`);
             }} className={styles.cardLink}>
 
                 <h2>{product.title}</h2>
@@ -42,6 +42,7 @@ export function Card({ product }: { product: Product }) {
                         height={80}
                         alt={`Image of ${product.title}`}
                     />
+        
                 </div>
                 <div className={styles.lowerHalf}>
                     <div>
@@ -49,7 +50,7 @@ export function Card({ product }: { product: Product }) {
                             <span className={styles.oldPrice}>Förr: &euro;{product.price}</span>
                             <span className={styles.discountedPrice}>Nu &euro;{discountedPrice}</span>
                         </div>
-                       
+
                         <p className={styles.paraD}>Kundbetyg:&nbsp;&nbsp; {Array.from({ length: Math.round(product.rating) }, (_, i) => (
                             <Star key={i} className={styles.star} />
                         ))}
@@ -63,12 +64,15 @@ export function Card({ product }: { product: Product }) {
                             onClick={(e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
-                                addToCart(product);
+                                addToCart({ ...product, price: discountedPrice });
                             }}
                         >
                             Lägg i varukorg
                         </button>
                     </div>
+                </div>
+                <div className={styles.overlay}>
+                    <h1>Oslagbara priser<br />under hela <br />påsk kampanjen!</h1>
                 </div>
             </a>
         </li>
