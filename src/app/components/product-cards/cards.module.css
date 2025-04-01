@@ -6,101 +6,130 @@ ul.cards {
   list-style: none;
 
   .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: auto;
+    min-height: 100%;
     background-color: var(--cardColor);
     border: 1px solid var(--cardBorderColor);
     padding: 0.5rem;
     border-radius: 5px;
     position: relative;
-    justify-content: center;
-    align-items: center;
-    width: clamp(98%, 78vw, 95%);
-    height: 450px;
+    width: clamp(90%, 78vw, 95%);
+    overflow: hidden;
+
+    h2 {
+      height: 40px;
+    }
 
     .campaignWrapper {
-        display: flex;
-        gap: clamp(3.5rem, 2vw, 1rem);
-        margin: .2rem;
-    
-        .imageWrapper {
-          display: flex;
-          justify-content: center;
-    
-          .image {
-            display: block;
-            width: auto;
-            height: 230px;
-            margin: 1.5rem 0 0 .5rem;
-          }
-        }
+      display: flex;
+      gap: clamp(3.5rem, 2vw, 1rem);
+      margin: .2rem;
+    }
+
+    .overlay {
+      position: absolute;
+      top: -10px;
+      left: -15px;
+      padding-left: 2rem;
+      border-radius: 5px;
+      width: 100%;
+      height: 400px;
+      margin: .6em .5rem 0 1rem;
+      background-color: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: flex-start;
+      opacity: 0;
+      transition: opacity 0.9s ease;
+
+      h1 {
+        margin-top: 4rem;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.9);
       }
-    
-      .imageWrapper {
-        position: relative;
-        display: inline-block;
-      }
-    
-      .overlay {
-        position: absolute;
-        top: 6px;
-        left: 0;
-        border-radius: 5px;
-        width: 300px;
-        height: 453px;
-        margin: .6em .5rem 0 1rem;
-        background-color: rgba(0, 0, 0, 0.4);
-        /* Semi-transparent background */
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-      }
+    }
 
     .imageWrapper {
+      flex-shrink: 0;
       display: flex;
       justify-content: center;
+      align-items: center;
+      min-height: 130px;
+      max-height: 100%;
 
       .image {
-        width: auto;
-        height: 120px;
-        margin: 10px 0 250px 0;
+        width: 100%;
+        height: auto;
+        max-height: 130px;
+        object-fit: contain;
       }
     }
 
     .lowerHalf {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
-      height: auto;
-      position: absolute;
-      bottom: 5px;
-      width: 94%;
+      justify-content: space-between;
+      flex-grow: 1;
+      gap: 1.2rem;
+      width: 100%;
+      min-height: 275px;
       padding: 6px;
 
       .price {
-        color: rgb(165, 19, 19);
-        font-size: medium;
-        font-weight: bolder;
-        margin-bottom: 25px;
+        font-size: large;
+      }
+
+      .prices {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .oldPrice {
+          text-decoration: line-through;
+          color: gray;
+          font-size: large;
+          font-weight: 200;
+        }
+
+        .discountedPrice {
+          color: rgb(165, 19, 19);
+          font-size: large;
+          font-weight: bolder;
+        }
+
+        .paraDiscount {
+          color: gray;
+          display: inline-flex;
+          margin-right: 0.5rem;
+        }
+
+        .paraD {
+          display: inline-flex;
+          margin-right: 0.5rem;
+        }
+
+        .paraSmall {
+          font-size: small;
+          margin-bottom: .5rem;
+        }
       }
 
       .btnWrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         width: 100%;
+        margin-top: auto;
 
         .btnBuy {
           border: 1px solid rgb(31, 22, 10);
           border-radius: 6px;
-          width: 98%;
+          width: 100%;
           height: 2rem;
           padding: 0.26rem;
           color: var(--fontColBtnBuy);
           background-color: var(--bgColBtnBuy);
           outline-offset: 0.3rem;
-          /* accessibility issue */
         }
 
         .btnBuy:hover {
@@ -109,24 +138,10 @@ ul.cards {
           color: var(--colBtnBuyHover);
         }
       }
-
-      .paraD {
-        display: inline-flex;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        margin-right: 0.5rem;
-      }
-
-      .paraSmall {
-        font-size: small;
-        margin-bottom: 1rem;
-      }
     }
+
+
   }
-      .imageWrapper {
-      position: relative;
-      display: inline-block;
-    }
 
 
   .card {
@@ -137,6 +152,10 @@ ul.cards {
     border-radius: 5px;
     transform: scale(1.03);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .card:hover .overlay {
+    opacity: 1;
   }
 }
 

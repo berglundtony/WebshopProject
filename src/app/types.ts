@@ -33,6 +33,7 @@ export interface Product {
     title: string,
     description: string,
     category: string,
+    originalPrice: number,
     price: number,
     discountPercentage: number,
     rating: number,

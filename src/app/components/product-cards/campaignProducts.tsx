@@ -27,56 +27,49 @@ export function Card({ product }: { product: Product }) {
     const discountedPrice = DiscountedPrice(product);
 
     return (
-        <div className={styles.overlay}>
-            <li className={styles.card} aria-label={`Länk till ${product.title}`}>
-                <a onClick={(e) => {
-                    e.stopPropagation();
-                    router.push(`/products/${product.id}`);
-                }} className={styles.cardLink}>
+        <li className={styles.card} aria-label={`Länk till ${product.title}`}>
+            <a onClick={(e) => {
+                e.stopPropagation();
+                router.push(`/products/${product.id}?discountedPrice=${encodeURIComponent(String(discountedPrice))}`);
+            }} className={styles.cardLink}>
 
-                    <h2>{product.title}</h2>
-                    <div className={styles.imageWrapper}>
-                        <Image
-                            className={styles.image}
-                            src={product.images[0]}
-                            width={80}
-                            height={80}
-                            alt={`Image of ${product.title}`}
-                        />
-                        <div className={styles.overlay}>
-                            <h1>Oslagbara priser<br />under hela <br />Påsk kampanjen</h1>
-                        </div>
+                <h2>{product.title}</h2>
+                <div className={styles.imageWrapper}>
+                    <Image
+                        className={styles.image}
+                        src={product.images[0]}
+                        width={80}
+                        height={80}
+                        alt={`Image of ${product.title}`} />
+                </div>
+                <div className={styles.lowerHalf}>
+                    <div className={styles.prices}>
+                        <span className={styles.oldPrice}>Förr: &euro;{product.price}</span>
+                        <span className={styles.discountedPrice}>Nu &euro;{discountedPrice}</span>
                     </div>
-                    <div className={styles.lowerHalf}>
-                        <div>
-                            <div>
-                                <p className={styles.paraD}>Pris:</p>
-                                <span className={styles.price}>&euro; {discountedPrice}</span>
-                            </div>
-                            <div>
-                                <p className={styles.paraD}>Kundbetyg:    {Array.from({ length: Math.round(product.rating) }, (_, i) => (
-                                    <Star key={i} className={styles.star} />
-                                ))}
-                                </p>
-                            </div>
-                            <p className={styles.paraSmall}>{product.description}</p>
-                        </div>
-                        <div className={styles.btnWrapper}>
-                            <button
-                                className={styles.btnBuy}
-                                aria-label={`knapp för köp`}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    addToCart({ ...product, price: discountedPrice });
-                                }}
-                            >
-                                Lägg i varukorg
-                            </button>
-                        </div>
+                    <p className={styles.paraD}>Kundbetyg:&nbsp;&nbsp; {Array.from({ length: Math.round(product.rating) }, (_, i) => (
+                        <Star key={i} className={styles.star} />
+                    ))}
+                    </p>
+                    <p className={styles.paraSmall}>{product.description}</p>
+                    <div className={styles.btnWrapper}>
+                        <button
+                            className={styles.btnBuy}
+                            aria-label={`knapp för köp`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                addToCart({ ...product, price: discountedPrice });
+                            }}
+                        >
+                            Lägg i varukorg
+                        </button>
                     </div>
-                </a>
-            </li>
-        </div>
+                </div>
+                <div className={styles.overlay}>
+                    <h1>Påsk kampanj!<br /><br />Hela 25 % rabatt under påskhelgen!</h1>
+                </div>
+            </a>
+        </li>
     );
 }

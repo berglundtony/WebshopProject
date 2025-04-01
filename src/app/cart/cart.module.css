@@ -38,6 +38,10 @@ h1.cartHead {
         padding-left: clamp(5px, 2vw, 20px);
         color: var(--color-bg-button)
     }
+    a:hover{
+        text-decoration-line: underline;
+        cursor:pointer;
+    }
 
     img {
         width: clamp(60px, 2vw, 80px);
