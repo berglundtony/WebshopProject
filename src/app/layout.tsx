@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <CartProvider>
-        <body>
+        <body className="top">
         <TopNavigation/>
         <main>{children}</main>
         <Footer/>

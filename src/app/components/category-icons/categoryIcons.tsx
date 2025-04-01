@@ -59,7 +59,7 @@ export function ShowCampaingCategories() {
         activeTab === "home" && (
           <ul className={styles.categoryList}>
             <li className={styles.home} data-catagory-group={'home'}>
-              <a onClick={() => {
+              <a className={styles.href} onClick={() => {
                 router.push(`/products?filterBy=furniture`);
               }}>
                 <Image
@@ -73,7 +73,7 @@ export function ShowCampaingCategories() {
               </a>
             </li>
             <li className={styles.home} data-catagory-group={'home'}>
-              <a onClick={() => {
+              <a className={styles.href} onClick={() => {
                 router.push(`/products?filterBy=home-decoration`);
               }}>
                 <Image
@@ -87,7 +87,7 @@ export function ShowCampaingCategories() {
               </a>
             </li>
             <li className={styles.home} data-catagory-group={'home'}>
-              <a onClick={() => {
+              <a className={styles.href} onClick={() => {
                 router.push(`/products?filterBy=kitchen-accessories`);
               }}>
                 <Image
@@ -101,7 +101,7 @@ export function ShowCampaingCategories() {
               </a>
             </li>
             <li className={styles.home} data-catagory-group={'home'}>
-              <a onClick={() => {
+              <a className={styles.href} onClick={() => {
                 router.push(`/products?filterBy=groceries`);
               }}>
                 <Image
@@ -119,7 +119,7 @@ export function ShowCampaingCategories() {
       {activeTab === "electronics" && (
         <ul className={styles.categoryList}>
           <li className='tablets' data-catagory-group={'computing'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=laptops`);
             }}>
               <Image
@@ -133,7 +133,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.computing} data-catagory-group={'computing'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=tablets`);
             }}>
               <Image
@@ -147,7 +147,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.computing} data-catagory-group={'computing'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=cell-phone`);
             }}>
               <Image
@@ -161,7 +161,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.computing} data-catagory-group={'computing'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=mobile-accessories`);
             }}>
               <Image
@@ -179,7 +179,7 @@ export function ShowCampaingCategories() {
       {activeTab === "vehicle" && (
         <ul className={styles.categoryList}>
           <li className='vehicle' data-catagory-group={'vehicle'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=motorcycle`);
             }}>
               <Image
@@ -193,7 +193,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className='vehicle' data-categories={'vehicle'} data-catagory-group={'vehicle'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=vehicle`);
             }}>
               <Image
@@ -211,7 +211,7 @@ export function ShowCampaingCategories() {
       {activeTab === "woman" && (
         <ul className={styles.categoryList}>
           <li className={styles.beauty} data-catagory-group={'beauty'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=beauty`);
             }}>
               <Image
@@ -225,7 +225,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.beauty} data-catagory-group={'beauty'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=fragrances`);
             }}>
               <Image
@@ -239,7 +239,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.beauty} data-catagory-group={'beauty'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=skin-care`);
             }}>
               <Image
@@ -253,7 +253,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.woman}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=tops`);
             }}>
               <Image
@@ -267,7 +267,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.woman}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=womens-dresses`);
             }}>
               <Image
@@ -281,7 +281,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.woman}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=womens-shoes`);
             }}>
               <Image
@@ -295,7 +295,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.woman} data-catagory-group={'woman'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=womens-bags`);
             }}>
               <Image
@@ -309,7 +309,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.woman} data-catagory-group={'woman'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=womens-jewellery`);
             }}>
               <Image
@@ -323,7 +323,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.woman} data-catagory-group={'woman'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=womens-watches`);
             }}>
               <Image
@@ -341,7 +341,7 @@ export function ShowCampaingCategories() {
       {activeTab === "men" && (
         <ul className={styles.categoryList}>
           <li className={styles.men} data-catagory-group={'men'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=mens-shoes`);
             }}>
               <Image
@@ -355,7 +355,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.men} data-catagory-group={'men'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=mens-shirts`);
             }}>
               <Image
@@ -369,7 +369,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.men} data-catagory-group={'men'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=mens-watches`);
             }}>
               <Image
@@ -387,7 +387,7 @@ export function ShowCampaingCategories() {
       {activeTab === "sport" && (
         <ul className={styles.categoryList}>
           <li className='sports' data-categories={'sports-accessories'} data-catagory-group={'sports'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=sports-accessories`);
             }}>
               <Image
@@ -402,7 +402,7 @@ export function ShowCampaingCategories() {
             </a>
           </li>
           <li className={styles.men} data-catagory-group={'spots'}>
-            <a onClick={() => {
+            <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=sunglasses`);
             }}>
               <Image

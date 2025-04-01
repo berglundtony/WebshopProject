@@ -1,12 +1,3 @@
-:root {
-    --color-primary: #333;
-    --color-secondary: #7575753f;
-    --color-border: #3333333f;
-    --color-bg-button: #333;
-    --color-bg-button-hover: #3333333f;
-    --color-text-light: #fff;
-}
-
 h1.cartHead {
     text-align: center;
     padding: .5em 0 0 1em;

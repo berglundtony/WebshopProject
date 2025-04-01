@@ -29,7 +29,7 @@
 ---------------------------------------*/
 
 @media (max-width: 760px) {
-    body {
+    body.top {
         padding-top: 75px;
     }
 

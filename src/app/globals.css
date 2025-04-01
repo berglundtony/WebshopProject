@@ -15,6 +15,12 @@
   --fontColBtnBuy: rgb(49, 45, 37);
   --borderColBtnBuy: rgb(108, 103, 94);
   --colBtnBuy: rgb(72, 66, 55);
+  --color-primary: #333;
+  --color-secondary: #7575753f;
+  --color-border: #3333333f;
+  --color-bg-button: #333;
+  --color-bg-button-hover: #3333333f;
+  --color-text-light: #fff;
 }
 
 body {
