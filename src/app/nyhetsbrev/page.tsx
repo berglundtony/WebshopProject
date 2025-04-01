@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useEffect, useState } from "react";
+import {  Suspense, ReactNode, useEffect, useState } from "react";
 import style from "./page.module.css";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NewLetterData, TransactionResult } from "../types";
@@ -162,25 +162,32 @@ export default function NyhetsbrevPage() {
   };
 
 
-
-  switch (result) {
-    case "confDone":
-      return <div className={style.newsLetterBox}>Bekräftning email skickat</div>
-    case "confFail":
-      return <div className={style.newsLetterBox}>Kunde inte bekräfta email<br /><p className={style.error}>{message}</p></div>
-    case "subDone":
-      return <div className={style.newsLetterBox}>Email avregisterart</div>
-    case "subFail":
-      return <div className={style.newsLetterBox}>Kunde inte avregistrara<br /><p className={style.error}>{message}</p></div>
-    default:
-      return <div className={style.newsLetterBox}>
-        <h3 className={style.massage}>Sign up for news letter</h3>
-        <form id={style.post} action={postForm}>
-          <div className={style.inputWrapper}>
-            <input className={style.emailInput} id="email" name="email" type="email"></input>
-            <button className={style.emailButton} type="submit">Register</button>
-          </div>
-        </form>
-      </div>;
-  }
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      {(() => {
+        switch (result) {
+          case "confDone":
+            return <div className={style.newsLetterBox}>Bekräftning email skickat</div>;
+          case "confFail":
+            return <div className={style.newsLetterBox}>Kunde inte bekräfta email<br /><p className={style.error}>{message}</p></div>;
+          case "subDone":
+            return <div className={style.newsLetterBox}>Email avregisterart</div>;
+          case "subFail":
+            return <div className={style.newsLetterBox}>Kunde inte avregistrara<br /><p className={style.error}>{message}</p></div>;
+          default:
+            return (
+              <div className={style.newsLetterBox}>
+                <h3 className={style.massage}>Sign up for news letter</h3>
+                <form id={style.post} action={postForm}>
+                  <div className={style.inputWrapper}>
+                    <input className={style.emailInput} id="email" name="email" type="email"></input>
+                    <button className={style.emailButton} type="submit">Register</button>
+                  </div>
+                </form>
+              </div>
+            );
+        }
+      })()}
+    </Suspense>
+  );
 }
