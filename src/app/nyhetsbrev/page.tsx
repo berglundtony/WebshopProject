@@ -91,7 +91,7 @@ async function confirm(email: string, key: string): Promise<TransactionResult<bo
   const mailresult = await send(email, "Email bekräftning lyckades", <div>
     <h3>email verifieratl</h3>
     <p>Välkommen till Webbshopen </p>
-    <a href={`http://localhost:3000/nyhetsbrev?action=unsub&key=${key}&email=${email}`} >Avregisterra från nyhetsbrev</a>
+    <a className={style.unregister} href={`http://localhost:3000/nyhetsbrev?action=unsub&key=${key}&email=${email}`} >Avregisterra från nyhetsbrev</a>
   </div>);
 
   if (mailresult) {
