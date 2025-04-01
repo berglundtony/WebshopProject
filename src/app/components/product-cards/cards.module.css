@@ -20,8 +20,8 @@ ul.cards {
     width: clamp(90%, 78vw, 95%);
     overflow: hidden;
 
-    h2 {
-      height: 40px;
+    h2.title{
+      height: 60px;
     }
 
     .campaignWrapper {
@@ -73,9 +73,9 @@ ul.cards {
       flex-direction: column;
       justify-content: space-between;
       flex-grow: 1;
-      gap: 1.2rem;
+      gap: 1.4rem;
       width: 100%;
-      min-height: 275px;
+      min-height: 285px;
       padding: 6px;
 
       .price {
@@ -139,8 +139,6 @@ ul.cards {
         }
       }
     }
-
-
   }
 
 

@@ -25,7 +25,8 @@ function send(email: string, title: string, content: ReactNode): Promise<boolean
     dialog.appendChild(h3);
 
     const CloseButton = document.createElement("button");
-    CloseButton.innerText = "close";
+    CloseButton.className = style.Close;
+    CloseButton.innerText = "x";
     CloseButton.onclick = (e: Event) => {
       ((e.target as HTMLAnchorElement).parentElement as HTMLDialogElement).close();
       resolve(false);

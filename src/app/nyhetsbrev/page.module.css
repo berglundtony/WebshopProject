@@ -65,7 +65,7 @@ user-select: none;
   background-color: orange;
   color: #000;
   position: absolute;
-  right: 0; /*i swear to <insert deity here> this motherfucker is totally gaslighting me i should not need that width and left thingy under this... but right:0; does nothing wtf?!*/ 
+  right: 0;
   left: calc(100% - 13rem);
   width: 13rem;
   bottom: 0;
@@ -73,8 +73,8 @@ user-select: none;
   padding: 1rem;
   border: .3rem dashed #000;
 
-  button {
-      margin-right: 1rem;
+  button.Close {
+      margin-right: 1.5rem;
       border: 0;
       background-color: transparent;
       font-size: large;

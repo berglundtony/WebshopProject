@@ -33,7 +33,7 @@ export function Card({ product }: { product: Product }) {
         }
       }}>
         <div className={styles.cardLink}>
-          <h2>{product.title}</h2>
+          <h2 className={styles.title}>{product.title}</h2>
           <div className={styles.imageWrapper}>
             <Image
             className={styles.image}
