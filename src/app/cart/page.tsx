@@ -37,11 +37,12 @@ export default function CartPage() {
                                 </h2>
                                 <div className={styles.incredecre}>
                                     <button
+                                        className={styles.decrementCartItem}
                                         onClick={() => decrementCartItem(item.id)}
                                         aria-label={`Minska antal av ${item.title}`}
                                     >-</button>
                                     <span>{item.quantity}</span>
-                                    <button onClick={() => incrementCartItem(item.id)}
+                                    <button className={styles.incrementCartItem} onClick={() => incrementCartItem(item.id)}
                                         aria-label={`Öka antal av ${item.title}`}
                                     >+</button>
                                 </div>

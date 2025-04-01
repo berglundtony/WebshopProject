@@ -93,7 +93,7 @@ h1.cartHead {
     gap: 10px;
     margin: 0px 20px;
 
-    button {
+    button.incrementCartItem, button.decrementCartItem {
         width: clamp(23px, 2vw, 26px);
         height: clamp(23px, 2vw, 26px);
         border-radius: 50%;
@@ -102,7 +102,7 @@ h1.cartHead {
         cursor: pointer;
     }
 
-    button:hover {
+    button.incrementCartItem:hover,  button.decrementCartItem:hover {
         background-color: var(--color-bg-button-hover);
     }
 
@@ -119,7 +119,7 @@ h1.cartHead {
     margin-bottom: 24rem;
     padding-right: clamp(1rem, 4vw, 1rem);
 
-    h2 {
+    h2.price {
 
         .totalPrice,
         .currency {
