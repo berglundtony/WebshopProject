@@ -1,18 +1,21 @@
 "use client"
-import { useCart } from "../cartprovider";
-// import { useEffect, useState } from "react";
-// import dynamic from "next/dynamic";
-import { useRouter } from "next/navigation";
-import { CartItem } from "../types";
-import styles from './cart.module.css';
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import { CartItem } from "../../types";
+import styles from './cartPageComponent.module.css';
 import Image from 'next/image';
 
-
-export default function CartPage() {
-    const { cartItems, incrementCartItem, decrementCartItem, removeCartItem } = useCart();
-    const totalPrice = Math.ceil(cartItems.reduce((total, item) => total + item.price * item.quantity, 0));
+export default function CartPageComponent({ cartItems, incrementCartItem, decrementCartItem, removeCartItem }: any) {
+    const totalPrice = Math.ceil(cartItems.reduce((total: number, item: { price: number; quantity: number; }) => total + item.price * item.quantity, 0));
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
     const router = useRouter(); 
- 
+
+    console.log("Path:", pathname);
+    console.log("Query Params:", searchParams.toString());
+
+    // const handleNavigateToProduct = (id: string) => {
+    //     router.push(`/products/${id}`);
+    // };
 
     return (
         <div className={styles.cartPage}>
@@ -20,8 +23,8 @@ export default function CartPage() {
             {cartItems.length === 0 ? <h2 className={styles.emptyCart}>Kundvagnen är tom.</h2> : null}
             <ul className={styles.cartList}>
                 {
-                    cartItems.map((item: CartItem) => (
-                        <li key={item.id} className={styles.cardCart}>
+                    cartItems.map((item: CartItem, index: number) => (
+                        <li key={index} className={styles.cardCart}>
                             <Image
                                 src={item.images[0]}
                                 alt={item.title}
@@ -65,6 +68,6 @@ export default function CartPage() {
                     </h2>
                 </div>
             </ul>
-        </div>  
-    )
+        </div>
+    );
 }

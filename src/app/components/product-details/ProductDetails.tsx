@@ -6,13 +6,17 @@ import { generateUniqueId } from "@/app/actions";
 import { useCart } from "@/app/cartprovider";
 import { Inter } from 'next/font/google'
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 const inter = Inter({ subsets: ['latin'] });
 
 
 export default function ProductDetails({ product }: { product: Product }) {
     const { addToCart } = useCart();
-    const [selectedImage, setSelectedImage] = useState(product.images[0]); 
+    const [selectedImage, setSelectedImage] = useState(product.images[0]);
+    const params = useSearchParams();
+    const discountedPrice = params.get("discountedPrice");
+    const finalPrice = discountedPrice ? parseFloat(discountedPrice) : product.price;
     return (
         <div className={inter.className}>
             <div className={styles.allWrapper}>
@@ -24,8 +28,14 @@ export default function ProductDetails({ product }: { product: Product }) {
                         height={380}
                         alt={`Image of ${product.title}`}
                     />
-                                       
-                    <p className={styles.price}>&euro;{product.price}</p>
+
+                    {discountedPrice ? (
+                        <div className={styles.prices}>
+                            <span className={styles.oldPrice}>Förr: &euro;{product.price}</span>
+                            <span className={styles.newPrice}>Nu: &euro;{finalPrice}</span>
+                        </div>
+                    ) : (<span className={styles.price}>&euro;{product.price}</span>
+                    )}
                     <div className={styles.btnWrapper}>
                         <button
                             className={styles.btnBuy}
@@ -33,7 +43,8 @@ export default function ProductDetails({ product }: { product: Product }) {
                             onClick={(e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
-                                addToCart(product);
+                                const updatedProduct = { ...product, price: finalPrice };
+                                addToCart(updatedProduct);
                             }}
                         >
                             Lägg i varukorg
@@ -54,10 +65,10 @@ export default function ProductDetails({ product }: { product: Product }) {
                     <p className={styles.descript}>{product.warrantyInformation}</p>
                     <h3 className={styles.headersSpacing}>Artikelnummer</h3>
                     <p className={styles.descript}>{product.sku}</p>
-                    { product.images.length > 1 &&(
+                    {product.images.length > 1 && (
                         <ul className={styles.myUL} role="list">
                             <div className={styles.thumbs}>
-                                {product.images.map((img, index) =>(
+                                {product.images.map((img, index) => (
                                     <li key={generateUniqueId()}>
                                         <Image
                                             className={styles.thumb}
@@ -66,7 +77,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                                             height={380}
                                             alt={`Thumbnail ${index + 1} of ${product.title}`}
                                             onClick={() => setSelectedImage(img)} // Uppdaterar den stora bilden
-                                            style={{ cursor: "pointer",borderRadius:"10px", boxShadow: selectedImage === img ? "0 0 15px rgba(0, 0, 0, 0.5)" : "none" }}
+                                            style={{ cursor: "pointer", borderRadius: "10px", boxShadow: selectedImage === img ? "0 0 15px rgba(0, 0, 0, 0.5)" : "none" }}
                                         />
                                     </li>
                                 ))}

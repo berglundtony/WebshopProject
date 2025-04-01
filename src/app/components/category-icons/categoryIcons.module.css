@@ -36,7 +36,7 @@
 
     img {
       margin: .3rem 0;
-      width: 13%;
+      width: clamp(8%, 4vw, 12%);
       height: auto;
       object-fit: cover;
     }
