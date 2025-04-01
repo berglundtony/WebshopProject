@@ -26,7 +26,8 @@ export default function CartPage() {
                                 src={item.images[0]}
                                 alt={item.title}
                                 width={200}
-                                height={200} />
+                                height={200}
+                                className={styles.picture}/>
                             <a className={styles.title} onClick={() => {
                                 router.push(`/products/${item.id}?price=${item.price}`)
                             }}>

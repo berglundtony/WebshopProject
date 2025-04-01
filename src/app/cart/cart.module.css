@@ -34,7 +34,7 @@ h1.cartHead {
         cursor:pointer;
     }
 
-    img {
+    img.picture {
         width: clamp(60px, 2vw, 80px);
         height: clamp(60px, 2vw, 80px);
         object-fit: cover;
