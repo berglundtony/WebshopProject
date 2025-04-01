@@ -30,7 +30,7 @@ export function Card({ product }: { product: Product }) {
         <li className={styles.card} aria-label={`Länk till ${product.title}`}>
             <a onClick={(e) => {
                 e.stopPropagation();
-                router.push(`/products/${product.id}`);
+                router.push(`/products/${product.id}?${discountedPrice}`);
             }} className={styles.cardLink}>
 
                 <h2>{product.title}</h2>

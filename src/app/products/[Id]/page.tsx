@@ -17,7 +17,7 @@ export default function ProductDetail({params,
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const resolvedParams = await params; // Vänta på att `params` är upplöst
+                const resolvedParams = await params; 
                 const data: Product | undefined = await fetchProduct(resolvedParams.Id);
                 if (data) {
                     setProduct(data);
