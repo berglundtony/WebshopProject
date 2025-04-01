@@ -83,7 +83,7 @@ user-select: none;
       cursor: pointer;
   }
 
-  a {
+  a.mailLink {
       font-size: large;
       color: black;
       font-weight: bolder;
@@ -160,9 +160,6 @@ user-select: none;
     --button-secondary-hover: #1a1a1a;
   }
 }
-
-
-
 
 .main {
   display: flex;

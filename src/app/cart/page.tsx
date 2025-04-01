@@ -1,7 +1,5 @@
 "use client"
 import { useCart } from "../cartprovider";
-// import { useEffect, useState } from "react";
-// import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { CartItem } from "../types";
 import styles from './cart.module.css';
@@ -26,23 +24,25 @@ export default function CartPage() {
                                 src={item.images[0]}
                                 alt={item.title}
                                 width={200}
-                                height={200} />
+                                height={200}
+                                className={styles.picture}/>
                             <a className={styles.title} onClick={() => {
                                 router.push(`/products/${item.id}?price=${item.price}`)
                             }}>
                                 {item.title}
                             </a>
                             <div className={styles.s1}>
-                                <h2><span className={styles.priceCurrency}>&euro;</span>
+                                <h2 className={styles.itemPrice }><span className={styles.priceCurrency}>&euro;</span>
                                     <span className={styles.priceQuantity} aria-live="polite">{Math.ceil(item.price * item.quantity)}</span>
                                 </h2>
                                 <div className={styles.incredecre}>
                                     <button
+                                        className={styles.decrementCartItem}
                                         onClick={() => decrementCartItem(item.id)}
                                         aria-label={`Minska antal av ${item.title}`}
                                     >-</button>
                                     <span>{item.quantity}</span>
-                                    <button onClick={() => incrementCartItem(item.id)}
+                                    <button className={styles.incrementCartItem} onClick={() => incrementCartItem(item.id)}
                                         aria-label={`Öka antal av ${item.title}`}
                                     >+</button>
                                 </div>
@@ -58,7 +58,7 @@ export default function CartPage() {
                     ))
                 }
                 <div className={styles.totalPriceWrapper} >
-                    <h2>
+                    <h2 className={styles.price}>
                         <span className={styles.fontBold}>Totalt: </span>
                         <span className={styles.currency}>&euro;</span>
                         <span className={styles.totalPrice} aria-live="polite">{totalPrice}</span>

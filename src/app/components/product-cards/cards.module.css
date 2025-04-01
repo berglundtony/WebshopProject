@@ -45,7 +45,7 @@ ul.cards {
       opacity: 0;
       transition: opacity 0.9s ease;
 
-      h1 {
+      h1.discount {
         margin-top: 4rem;
         text-align: left;
         color: rgba(255, 255, 255, 0.9);
