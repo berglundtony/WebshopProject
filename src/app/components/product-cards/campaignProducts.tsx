@@ -42,7 +42,7 @@ export function Card({ product }: { product: Product }) {
                         height={80}
                         alt={`Image of ${product.title}`}
                     />
-        
+
                 </div>
                 <div className={styles.lowerHalf}>
                     <div>

@@ -1,5 +1,4 @@
 .cards {
-.cards {
   display: grid;
   gap: clamp(.1rem, 4vw, .4rem);
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
