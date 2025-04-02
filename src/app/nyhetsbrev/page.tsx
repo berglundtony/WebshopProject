@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, Suspense, useEffect, useState } from "react";
 import style from "./page.module.css";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NewLetterData, TransactionResult } from "../types";
@@ -119,7 +119,15 @@ async function unRegister(email: string, key: string): Promise<TransactionResult
   return { status: true, message: "" };
 }
 
-export default function NyhetsbrevPage() {
+export default function NyhetsbrevPageWrapper() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <NyhetsbrevPage />
+    </Suspense>
+  )
+}
+
+ function NyhetsbrevPage() {
   const postForm = async (e: FormData) => {
     const email = e.get("email");
     if (!email) return;

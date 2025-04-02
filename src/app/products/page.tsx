@@ -11,8 +11,16 @@ import FilterByCategory from "../components/filter-by-category/filterByCategory"
 import Search from "../components/search/search";
 import style from "./page.module.css";
 
+export default function ProductsPageWrapper() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <ProductsPage />
+    </Suspense>
+  )
+}
 
-export default function ProductsPage() {
+
+ function ProductsPage() {
   const [state, setState] = useState({ products: [], total: 0 } as ProductResult);
   const [isDoneLoading, setIsDoneLoading] = useState(false);
 
@@ -85,12 +93,11 @@ export default function ProductsPage() {
     })();
   }, [limit, skip, orderBy, order, filterBy, q]);
 
-    const totalLimit = 25;
-    const pageCount = Math.ceil(state.total / totalLimit);
+  const totalLimit = 25;
+  const pageCount = Math.ceil(state.total / totalLimit);
 
   return (
-  <Suspense fallback={<div className={style.loadScreen}>Loading...</div>}>
-    {!isDoneLoading ? (
+    !isDoneLoading ? (
       <div className={style.loadScreen}></div>
     ) : (
       <div>
@@ -103,8 +110,7 @@ export default function ProductsPage() {
           <ProductList products={state.products ?? []} />
           <PaginationNav path={"/products"} pagesCount={pageCount} limit={totalLimit}></PaginationNav>
         </main>
-        </div>
-    )}
-    </Suspense>
+      </div>
     )
-  }
+  );
+}

@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function ProductDetails({ product }: { product: Product }) {
     const { addToCart } = useCart();
-    const [selectedImage, setSelectedImage] = useState(product.images[0]);
+    const [selectedImage, setSelectedImage] = useState(product.images[0] || 'placeholder.svg');
     const params = useSearchParams();
 
     const [finalPrice, setFinalPrice] = useState(product.price);
@@ -32,7 +32,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                     : product.price;
         setFinalPrice(newPrice);
     }, [params, product.price]);
-    { console.log(finalPrice) }
+
     return (
         <div className={inter.className}>
             <div className={styles.allWrapper}>
@@ -44,7 +44,6 @@ export default function ProductDetails({ product }: { product: Product }) {
                         height={380}
                         alt={`Image of ${product.title}`}
                     />
-              
                     {finalPrice !== product.price ? (
                         <div className={styles.prices}>
                             <span className={styles.oldPrice}>Förr: &euro;{product.price}</span>
@@ -92,7 +91,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                                             width={380}
                                             height={380}
                                             alt={`Thumbnail ${index + 1} of ${product.title}`}
-                                            onClick={() => setSelectedImage(img)} // Uppdaterar den stora bilden
+                                            onClick={() => setSelectedImage(img)}
                                             style={{ cursor: "pointer", borderRadius: "10px", boxShadow: selectedImage === img ? "0 0 15px rgba(0, 0, 0, 0.5)" : "none" }}
                                         />
                                     </li>
