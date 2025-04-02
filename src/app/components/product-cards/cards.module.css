@@ -20,8 +20,8 @@
       top: -10px;
       left: -15px;
       border-radius: 5px;
-      width: 370px;
-      height: 383px;
+      width: 100%;
+      height: 88%;
       margin: .6em .5rem 0 1rem;
       background-color: rgba(0, 0, 0, 0.4);
       /* Semi-transparent background */
@@ -33,9 +33,7 @@
       transition: opacity 0.5s ease;
     }
 
-    .card:hover .overlay {
-      opacity: 1;
-    }
+
 
     h2.title {
       font-size: 1.2rem;
@@ -115,28 +113,29 @@
       font-size: 1rem;
       margin-left: .3rem
     }
+
     .price {
       margin-bottom: .5rem;
       font-size: medium;
     }
-   
-      .prices {
-        display: flex;
-        align-items: center;
-        gap: 0.2rem;
-        margin-bottom: .5rem;
-      }
 
-      .oldPrice {
-        text-decoration: line-through;
-        color: gray;
-        font-weight: 200;
-      }
+    .prices {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      margin-bottom: .5rem;
+    }
 
-      .discountedPrice {
-        color: rgb(165, 19, 19);
-        font-weight: bolder;
-      }
+    .oldPrice {
+      text-decoration: line-through;
+      color: gray;
+      font-weight: 200;
+    }
+
+    .discountedPrice {
+      color: rgb(165, 19, 19);
+      font-weight: bolder;
+    }
 
     .btnWrapper {
       display: flex;
@@ -163,6 +162,10 @@
       }
     }
   }
+}
+
+.card:hover .overlay {
+  opacity: 1;
 }
 
 .loadScreen {
