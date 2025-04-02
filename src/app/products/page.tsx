@@ -8,6 +8,8 @@ import Search from "../components/search/search";
 import ProductLoader from "../components/loading-products/productLoader";
 import style from "./page.module.css";
 
+
+
 export default function ProductsPage() {
   const params = useSearchParams();
   const totalLimit = 25;
