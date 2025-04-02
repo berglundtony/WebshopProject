@@ -28,11 +28,10 @@ export function Card({ product }: { product: Product }) {
 
     return (
         <li className={styles.card} aria-label={`Länk till ${product.title}`}>
-            <a onClick={(e) => {
+            <a className={styles.cardLink} onClick={(e) => {
                 e.stopPropagation();
-                router.push(`/products/${product.id}`);
-            }} className={styles.cardLink}>
-
+                router.push(`/products/${product.id}?discountedPrice=${discountedPrice}`)
+            }}>
                 <h2>{product.title}</h2>
                 <div className={styles.imageWrapper}>
                     <Image
