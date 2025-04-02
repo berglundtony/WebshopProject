@@ -31,7 +31,8 @@ export default function Menu() {
                 onClick={() => setOpen((prev) => !prev)} />  {open && (
                     <div className={styles.dropdownMenu}>
                         <Link href="./products" onClick={() => setOpen(false)}>Produkter </Link>
-                        <Link href="./cart" onClick={() => setOpen(false)}>Varukorg 🛒
+                        <Link href="./nyhetsbrev" onClick={() => setOpen(false)}>Nyhetsbrev </Link>
+                        <Link href="/cart" onClick={() => setOpen(false)}>Varukorg 🛒
                             <span className={styles.cartCount}>
                                 {cartItems.reduce((total, item) => total + item.quantity, 0)}
                             </span>

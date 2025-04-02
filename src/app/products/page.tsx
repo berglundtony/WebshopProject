@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense, useEffect, useState } from "react";
 import ProductList from "../components/product-cards/products";
 import { getCampaignIds, Products } from "../actions";
 import { ProductResult } from "../types";
@@ -9,10 +10,18 @@ import OrderBy from "../components/order-by/orderby";
 import FilterByCategory from "../components/filter-by-category/filterByCategory";
 import Search from "../components/search/search";
 import style from "./page.module.css";
-import { useEffect, useState } from "react";
 
 
-export default function ProductsPage() {
+export default function ProductsPageWrapper() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <ProductsPage />
+    </Suspense>
+  )
+}
+
+
+ function ProductsPage() {
   const [state, setState] = useState({ products: [], total: 0 } as ProductResult);
   const [isDoneLoading, setIsDoneLoading] = useState(false);
 
@@ -89,20 +98,20 @@ export default function ProductsPage() {
   const pageCount = Math.ceil(state.total / totalLimit);
 
   return (
-      !isDoneLoading ? (
-        <div className={style.loadScreen}></div>
-      ) : (
-        <div>
-          <main>
-            <div className={style.ToolPanel}>
-              <FilterByCategory></FilterByCategory>
-              <OrderBy></OrderBy>
-              <Search />
-            </div>
-            <ProductList products={state.products ?? []} />
-            <PaginationNav path={"/products"} pagesCount={pageCount} limit={totalLimit}></PaginationNav>
-          </main>
-        </div>
-      )
-  )
+    !isDoneLoading ? (
+      <div className={style.loadScreen}></div>
+    ) : (
+      <div>
+        <main>
+          <div className={style.ToolPanel}>
+            <FilterByCategory></FilterByCategory>
+            <OrderBy></OrderBy>
+            <Search />
+          </div>
+          <ProductList products={state.products ?? []} />
+          <PaginationNav path={"/products"} pagesCount={pageCount} limit={totalLimit}></PaginationNav>
+        </main>
+      </div>
+    )
+  );
 }
