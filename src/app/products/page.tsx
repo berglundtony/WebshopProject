@@ -1,6 +1,5 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
 import ProductList from "../components/product-cards/products";
 import { getCampaignIds, Products } from "../actions";
 import { ProductResult } from "../types";
@@ -10,6 +9,7 @@ import OrderBy from "../components/order-by/orderby";
 import FilterByCategory from "../components/filter-by-category/filterByCategory";
 import Search from "../components/search/search";
 import style from "./page.module.css";
+import { useEffect, useState } from "react";
 
 
 export default function ProductsPage() {
@@ -89,8 +89,7 @@ export default function ProductsPage() {
   const pageCount = Math.ceil(state.total / totalLimit);
 
   return (
-    <Suspense fallback={<div className={style.loadScreen}>Loading...</div>}>
-      {!isDoneLoading ? (
+      !isDoneLoading ? (
         <div className={style.loadScreen}></div>
       ) : (
         <div>
@@ -104,7 +103,6 @@ export default function ProductsPage() {
             <PaginationNav path={"/products"} pagesCount={pageCount} limit={totalLimit}></PaginationNav>
           </main>
         </div>
-      )}
-    </Suspense>
+      )
   )
 }

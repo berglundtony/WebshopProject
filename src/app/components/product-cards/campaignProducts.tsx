@@ -10,8 +10,8 @@ import { Star } from "lucide-react";
 export function CampaignProductList({ products }: { products: Product[] }) {
     return (
         <ul className={styles.cards} role="list">
-            {products.map((product) => (
-                <Card key={product.id} product={product} />
+            {products.map((product, index) => (
+                <Card key={product.id || index} product={product} />
             ))}
         </ul>
     );
