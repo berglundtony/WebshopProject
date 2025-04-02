@@ -42,6 +42,7 @@ export function Card({ product }: { product: Product }) {
                         height={80}
                         alt={`Image of ${product.title}`}
                     />
+
                 </div>
                 <div className={styles.lowerHalf}>
                     <div>
@@ -69,6 +70,9 @@ export function Card({ product }: { product: Product }) {
                             Lägg i varukorg
                         </button>
                     </div>
+                </div>
+                <div className={styles.overlay}>
+                    <h1>Oslagbara priser<br />under hela <br />påsk kampanjen!</h1>
                 </div>
             </a>
         </li>

@@ -18,7 +18,6 @@ export default function Menu() {
         }
     }, [open]);
 
-
     return (
         <>
             <Link className={styles.siteLogo} href="/" onClick={() => setOpen(false)}>webshoppen
@@ -40,6 +39,7 @@ export default function Menu() {
                         </Link>
                     </div>
                 )}
-        </div></>
+            </div>
+        </>
     )
 };

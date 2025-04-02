@@ -9,50 +9,50 @@ export function ShowCampaingCategories() {
   const [activeTab, setActiveTab] = useState("home");
   return (
     <div>
-    <div className={styles.categoryGroup}>
-      <div className={styles.tabs}>
-        <Link
+      <div className={styles.categoryGroup}>
+        <div className={styles.tabs}>
+          <Link
             className={`${styles.tab} ${activeTab === "home" ? styles.activeTab : ""
               }`}
             onClick={() => setActiveTab("home")}
             href="#"
           >  Hem
-        </Link>
-        <Link
-          className={`${styles.tab} ${activeTab === "vehicle" ? styles.activeTab : ""
-            }`}
+          </Link>
+          <Link
+            className={`${styles.tab} ${activeTab === "vehicle" ? styles.activeTab : ""
+              }`}
             onClick={() => setActiveTab("vehicle")}
             href="#">
-          Fordon
-        </Link>
-        <Link
-          className={`${styles.tab} ${activeTab === "electronics" ? styles.activeTab : ""
-            }`}
-          onClick={() => setActiveTab("electronics")}
-          href="#">
-          Elektronik
-        </Link>
-        <Link
-          className={`${styles.tab} ${activeTab === "woman" ? styles.activeTab : ""
-            }`}
-          onClick={() => setActiveTab("woman")}
-          href="#">
-          Dam
-        </Link>
-        <Link
-          className={`${styles.tab} ${activeTab === "men" ? styles.activeTab : ""
-            }`}
+            Fordon
+          </Link>
+          <Link
+            className={`${styles.tab} ${activeTab === "electronics" ? styles.activeTab : ""
+              }`}
+            onClick={() => setActiveTab("electronics")}
+            href="#">
+            Elektronik
+          </Link>
+          <Link
+            className={`${styles.tab} ${activeTab === "woman" ? styles.activeTab : ""
+              }`}
+            onClick={() => setActiveTab("woman")}
+            href="#">
+            Dam
+          </Link>
+          <Link
+            className={`${styles.tab} ${activeTab === "men" ? styles.activeTab : ""
+              }`}
             onClick={() => setActiveTab("men")}
             href="#">
-          Herr
-        </Link>
-        <Link
-          className={`${styles.tab} ${activeTab === "sport" ? styles.activeTab : ""
-            }`}
+            Herr
+          </Link>
+          <Link
+            className={`${styles.tab} ${activeTab === "sport" ? styles.activeTab : ""
+              }`}
             onClick={() => setActiveTab("sport")}
             href="#">
-          Sport
-        </Link>
+            Sport
+          </Link>
         </div>
       </div>
       {
@@ -100,7 +100,7 @@ export function ShowCampaingCategories() {
                 <p className={styles.kitchen_accessories}>Köksassocearer</p>
               </a>
             </li>
-            <li className={styles.home} data-catagory-group={'home'}>
+            <li className={styles.home}>
               <a className={styles.href} onClick={() => {
                 router.push(`/products?filterBy=groceries`);
               }}>
@@ -294,7 +294,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Damskor</p>
             </a>
           </li>
-          <li className={styles.woman} data-catagory-group={'woman'}>
+          <li className={styles.woman}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=womens-bags`);
             }}>
@@ -308,7 +308,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Damväskor</p>
             </a>
           </li>
-          <li className={styles.woman} data-catagory-group={'woman'}>
+          <li className={styles.woman}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=womens-jewellery`);
             }}>
@@ -322,7 +322,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Damsmycken</p>
             </a>
           </li>
-          <li className={styles.woman} data-catagory-group={'woman'}>
+          <li className={styles.woman}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=womens-watches`);
             }}>
@@ -340,7 +340,7 @@ export function ShowCampaingCategories() {
       )}
       {activeTab === "men" && (
         <ul className={styles.categoryList}>
-          <li className={styles.men} data-catagory-group={'men'}>
+          <li className={styles.men}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=mens-shoes`);
             }}>
@@ -354,7 +354,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Herrskor</p>
             </a>
           </li>
-          <li className={styles.men} data-catagory-group={'men'}>
+          <li className={styles.men}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=mens-shirts`);
             }}>
@@ -368,7 +368,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Herrskortor</p>
             </a>
           </li>
-          <li className={styles.men} data-catagory-group={'men'}>
+          <li className={styles.men}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=mens-watches`);
             }}>
@@ -386,7 +386,7 @@ export function ShowCampaingCategories() {
       )}
       {activeTab === "sport" && (
         <ul className={styles.categoryList}>
-          <li className={styles.sport}>
+          <li className={styles.sports}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=sports-accessories`);
             }}>
@@ -401,7 +401,7 @@ export function ShowCampaingCategories() {
               <p className={styles.category}>Sportartiklar</p>
             </a>
           </li>
-          <li className={styles.sport}>
+          <li className={styles.sports}>
             <a className={styles.href} onClick={() => {
               router.push(`/products?filterBy=sunglasses`);
             }}>
@@ -417,7 +417,6 @@ export function ShowCampaingCategories() {
           </li>
         </ul>
       )}
-      </div>
-  
+    </div>
   )
 }

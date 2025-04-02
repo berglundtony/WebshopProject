@@ -8,9 +8,9 @@ import styles from './search.module.css';
 
 
 // Debounce Utility
-function debounce(myfunc: (...args: any[]) => void, delay: number) {
+function debounce<T extends unknown[]>(myfunc: (...args: T) => void, delay: number) {
   let timeoutId: ReturnType<typeof setTimeout>;
-  return (...args: any[]) => {
+  return (...args: T) => {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => myfunc(...args), delay);
   };

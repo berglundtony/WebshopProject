@@ -32,7 +32,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                     : product.price;
         setFinalPrice(newPrice);
     }, [params, product.price]);
-
+    { console.log(finalPrice) }
     return (
         <div className={inter.className}>
             <div className={styles.allWrapper}>
@@ -44,7 +44,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                         height={380}
                         alt={`Image of ${product.title}`}
                     />
-
+              
                     {finalPrice !== product.price ? (
                         <div className={styles.prices}>
                             <span className={styles.oldPrice}>Förr: &euro;{product.price}</span>

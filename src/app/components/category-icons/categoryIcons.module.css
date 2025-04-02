@@ -11,8 +11,7 @@
   display: flex;
   gap: .5rem;
   flex-wrap: wrap;
-  justify-content: start;
-  height:1rem;
+  justify-content: space-between;
   max-width: 1800px;
   width: 100%;
   color: var(--fontColBtnBuy);
@@ -37,13 +36,19 @@
 
     img.product {
       margin: .3rem 0;
-      width: clamp(10%, 20vw, 16%);
+      width: clamp(8%, 4vw, 16%);
       height: auto;
       object-fit: cover;
     }
   }
 
-  li.home, li.computing, li.vehicle, li.beauty, li.woman, li.men, li.sport {
+  li.home,
+  li.computing,
+  li.vehicle,
+  li.beauty,
+  li.woman,
+  li.men,
+  li.sports {
     list-style-type: none;
     padding: 5px;
     border: 1px solid var(--bgBtnBuyHover);
@@ -56,30 +61,30 @@
     height: 80px;
   }
 
-  li.home:hover, 
+  li.home:hover,
   li.computing:hover,
   li.vehicle:hover,
   li.beauty:hover,
   li.woman:hover,
   li.men:hover,
-  li.sport:hover {
+  li.sports:hover {
     background-color: rgb(179, 167, 147);
     color: black;
   }
 
   li.beauty {
-    img {
-      width: 30%;
+    img.product {
+      width: 25%;
     }
   }
 
   li.woman {
-    img {
-      width: 30%;
+    img.product {
+      width: 25%;
     }
   }
 
-  p {
+  p.paraD {
     margin-top: auto;
   }
 }

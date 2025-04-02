@@ -8,32 +8,34 @@ import { useEffect, useState } from "react";
 
 export default function ProductDetail({params,
 }: {
-        params: { Id: string } | Promise<{ Id: string }>;
+        params: Promise<{ Id: string }>;
 }) {
     const [product, setProduct] = useState<Product | undefined>(undefined);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const resolvedParams = await params; // Vänta på att `params` är upplöst
+                const resolvedParams = params instanceof Promise ? await params : params;
                 const data: Product | undefined = await fetchProduct(resolvedParams.Id);
+
                 if (data) {
                     setProduct(data);
                 } else {
-                    setError('Product not found');
+                    setError("Product not found");
                 }
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             } catch (err) {
-                setError('Failed to load product');
+                console.error(err);
+                setError("Failed to load product");
             } finally {
                 setLoading(false);
             }
         };
 
         fetchData();
-    }, [params]); 
+    }, [params]);
 
     if (loading) {
         return <div>Loading...</div>;
@@ -42,7 +44,6 @@ export default function ProductDetail({params,
     if (error) {
         return <div>{error}</div>;
     }
-    return (
-        product ? <ProductDetails product={product} /> : <div>Product not found</div>
-    )
+
+    return product ? <ProductDetails product={product} /> : <div>Product not found</div>;
 }

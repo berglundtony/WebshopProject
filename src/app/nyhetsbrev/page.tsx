@@ -57,7 +57,7 @@ async function register(email: string): Promise<TransactionResult<boolean>> {
     return { status: false, message: "invalid email" };
   }
 
-  const mailResult = await send(email, "bekräfta email", <div>
+  const mailResult = await send(email, "bekräfta email", <div className={style.mail}>
     <a href={`http://localhost:3000/nyhetsbrev?action=confirm&key=${key}&email=${email}`} >bekräfta email</a>
   </div>);
 
@@ -88,9 +88,9 @@ async function confirm(email: string, key: string): Promise<TransactionResult<bo
 
   data.confirmed = true;
 
-  const mailresult = await send(email, "Email bekräftning lyckades", <div>
-    <h3>email verifieratl</h3>
-    <p>Välkommen till Webbshopen </p>
+  const mailresult = await send(email, "Email bekräftning lyckades", <div className={style.mail}>
+    <h3 className={style.verified}>email verifierat</h3>
+    <p className={style.velcome}>Välkommen till Webbshopen </p>
     <a className={style.unregister} href={`http://localhost:3000/nyhetsbrev?action=unsub&key=${key}&email=${email}`} >Avregisterra från nyhetsbrev</a>
   </div>);
 
@@ -173,7 +173,7 @@ export default function NyhetsbrevPage() {
     default:
       return <div className={style.newsLetterBox}>
         <h3 className={style.massage}>Sign up for news letter</h3>
-        <form action={postForm}>
+        <form id={style.post} action={postForm}>
           <div className={style.inputWrapper}>
             <input className={style.emailInput} id="email" name="email" type="email"></input>
             <button className={style.emailButton} type="submit">Register</button>
