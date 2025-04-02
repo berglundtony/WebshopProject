@@ -6,7 +6,7 @@ import { useCart } from "@/app/cartprovider";
 import { useRouter } from "next/navigation";
 import Star from "../star/star";
 
-export function ProductList({ products }: { products: Product[] }) {
+export default function ProductList({ products }: { products: Product[] }) {
   return (
     <ul className={styles.cards} role="list">
       {products.map((product) => (
