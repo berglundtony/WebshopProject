@@ -71,7 +71,7 @@ export function Card({ product }: { product: Product }) {
                     </div>
                 </div>
                 <div className={styles.overlay}>
-                    <h1>Oslagbara priser<br />hela påsken!</h1>
+                    <h1>Oslagbara<br /> priser hela påsken!</h1>
                 </div>
             </a>
         </li>
