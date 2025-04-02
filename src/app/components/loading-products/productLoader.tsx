@@ -1,6 +1,6 @@
 import { getCampaignIds, Products } from "../../actions";
 import { ProductResult } from "../../types";
-import ProductList from "../product-cards/products"; 
+import ProductList from "../product-cards/products";
 
 async function fetchProducts(params: URLSearchParams): Promise<ProductResult> {
     const productIds = ["1", "2", "3", "8", "10", "12", "14"];
@@ -50,5 +50,4 @@ async function fetchProducts(params: URLSearchParams): Promise<ProductResult> {
 export default async function ProductLoader({ params }: { params: URLSearchParams }) {
     const productsData = await fetchProducts(params);
     return <ProductList products={productsData.products} />;
-
 }
