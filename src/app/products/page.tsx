@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { ProductList } from "../components/product-cards/products";
 import { getCampaignIds, Products } from "../actions";
 import { ProductResult } from "../types";
@@ -88,7 +88,11 @@ export default function ProductsPage() {
     const totalLimit = 25;
     const pageCount = Math.ceil(state.total / totalLimit);
 
-    return !isDoneLoading ? <div className={style.loadScreen}></div> :
+  return (
+  <Suspense fallback={<div className={style.loadScreen}>Loading...</div>}>
+    {!isDoneLoading ? (
+      <div className={style.loadScreen}></div>
+    ) : (
       <div>
         <main>
           <div className={style.ToolPanel}>
@@ -99,5 +103,8 @@ export default function ProductsPage() {
           <ProductList products={state.products ?? []} />
           <PaginationNav path={"/products"} pagesCount={pageCount} limit={totalLimit}></PaginationNav>
         </main>
-      </div>;
+        </div>
+    )}
+    </Suspense>
+    )
   }
