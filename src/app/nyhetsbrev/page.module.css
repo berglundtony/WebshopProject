@@ -80,7 +80,7 @@
         cursor: pointer;
     }
 
-    a {
+    a.sendmail {
         font-size: large;
         color: black;
         font-weight: bolder;
