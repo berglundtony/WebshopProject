@@ -102,7 +102,7 @@
         flex: auto;
         height: 2rem;
 
-        input {
+        input.emailInput {
             height: 100%;
         }
 
