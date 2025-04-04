@@ -30,11 +30,6 @@
   }
 }
 
-
-/* .tabButton:hover {
-  background-color: #bbb;
-} */
-
 /* Lista */
 .categoryList {
   display: grid;
@@ -50,7 +45,7 @@
 
     img.product {
       margin: .3rem 0;
-      width: clamp(8%, 4vw, 12%);
+      width: clamp(18%, 10vw, 15%);
       height: auto;
       object-fit: cover;
     }
