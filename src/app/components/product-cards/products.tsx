@@ -50,13 +50,13 @@ export function Card({ product }: { product: Product }) {
                   <span className={styles.paraD}> Förr: </span>&euro;{product.originalPrice}
                 </p>
                 <p className={styles.discountedPrice}>
-                  <span className={styles.paraD}> Nu: </span>&euro;{product.price}
+                  <span className={styles.paraNu}> Nu: </span>&euro;{product.price}
                 </p>
               </div>
             ) : (
               <p className={styles.price}>&euro; {product.price}</p>
             )}
-            <div className={styles.paraD}>Kundbetyg:<Star score={product.rating}></Star></div>
+            <div className={styles.paraRating}>Kundbetyg: <Star score={product.rating}></Star></div>
             <p className={styles.paraSmall}>{product.description}</p>
             <div>
               <div className={styles.btnWrapper}>
