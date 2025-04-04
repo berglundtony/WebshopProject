@@ -29,9 +29,10 @@ h1.cartHead {
         padding-left: clamp(5px, 2vw, 20px);
         color: var(--color-bg-button)
     }
-    a.title:hover{
+
+    a.title:hover {
         text-decoration-line: underline;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     img.picture {
@@ -67,7 +68,9 @@ h1.cartHead {
                 color: var(--color-primary);
                 font-size: clamp(.8rem, 2vw, .9rem);
                 font-weight: 400;
-            }    color: var(--color-bg-button);
+            }
+
+            color: var(--color-bg-button);
         }
 
         .wasteBaskeBtn {
@@ -82,6 +85,7 @@ h1.cartHead {
             width: clamp(28px, 2vw, 42px);
             height: clamp(28px, 2vw, 42px);
             cursor: pointer;
+
         }
     }
 }
@@ -92,7 +96,8 @@ h1.cartHead {
     gap: 10px;
     margin: 0px 20px;
 
-    button.incrementCartItem, button.decrementCartItem {
+    button.incrementCartItem,
+    button.decrementCartItem {
         width: clamp(23px, 2vw, 26px);
         height: clamp(23px, 2vw, 26px);
         border-radius: 50%;
@@ -101,7 +106,8 @@ h1.cartHead {
         cursor: pointer;
     }
 
-    button.incrementCartItem:hover,  button.decrementCartItem:hover {
+    button.incrementCartItem:hover,
+    button.decrementCartItem:hover {
         background-color: var(--color-bg-button-hover);
     }
 
@@ -132,5 +138,12 @@ h1.cartHead {
             font-weight: 600;
             color: var(--color-primary);
         }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .wasteBasket {
+        opacity: .9;
+        filter: invert(1) brightness(2);
     }
 }

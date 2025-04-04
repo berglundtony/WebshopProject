@@ -58,7 +58,7 @@
   .thumb {
     width: auto;
     height: 110px;
-    margin: 0px;
+    margin: 0 .5rem 0 0;
   }
 }
 
@@ -112,6 +112,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: .5rem;
 
   .btnBuy {
     border: 1px solid rgb(31, 22, 10);

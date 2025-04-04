@@ -19,8 +19,6 @@ export default function ProductsPageWrapper() {
     </Suspense>
   )
 }
-
-
  function ProductsPage() {
   const [state, setState] = useState({ products: [], total: 0 } as ProductResult);
   const [isDoneLoading, setIsDoneLoading] = useState(false);
@@ -32,7 +30,6 @@ export default function ProductsPageWrapper() {
   const order = params.get("order");
   const filterBy = params.get("filterBy");
   const q = params.get("q");
-
 
   useEffect(() => {
     const productIds: Array<string> = ["1", "2", "3", "8", "10", "12", "14"];
