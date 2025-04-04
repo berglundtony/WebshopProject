@@ -20,8 +20,8 @@
   --color-primary: #333;
   --color-secondary: #7575753f;
   --color-border: #3333333f;
-  --color-bg-button: #333;
-  --color-bg-button-hover: #3333333f;
+  --color-bg-button: #514e4e;
+  --color-bg-button-hover: #ece9e93f;
   --color-text-light: #fff;
   --colorAdvertText: #a94f4f;
   --searchInputTextColor: rgb(100, 75, 75);
@@ -50,12 +50,12 @@ main {
     --cardBorderColor: rgb(56, 56, 56);
     --borderColBtnBuy: rgb(87, 79, 65);
     --color-bg-button: #9e9c9c;
-    --color-bg-button-hover: #ffffff3f;
+    --color-bg-button-hover: #ebebeb3f;
     --linkColor: #fff;
     --bgColorCategoryList: #2c2c2c;
     --colorAdvertText: #ce2a2a;
-    --bgColDropDown: rgb(99, 92, 85);
-    --color-primary: #9b9a9a;
+    --bgColDropDown: rgb(68, 67, 66);
+    --color-primary: #747373;
     --searchInputTextColor: #fff;
   }
 }

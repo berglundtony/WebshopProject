@@ -61,6 +61,7 @@ export function Card({ product }: { product: Product }) {
                             className={styles.btnBuy}
                             aria-label={`knapp för köp`}
                             onClick={(e) => {
+                                product.price = discountedPrice;
                                 e.preventDefault();
                                 e.stopPropagation();
                                 addToCart(product);

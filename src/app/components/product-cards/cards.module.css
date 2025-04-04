@@ -46,8 +46,8 @@
 
       .image {
         width: auto;
-        height: 170px;
-        margin: -15px 0 180px 0;
+        height: clamp(5rem, 20vw, 10rem);
+        margin: -5px 0 190px 0;
       }
 
     }

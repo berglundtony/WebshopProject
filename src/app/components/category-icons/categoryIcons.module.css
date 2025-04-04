@@ -14,11 +14,15 @@
   justify-content: space-between;
   max-width: 1800px;
   width: 100%;
-  color: var(--fontColBtnBuy);
 
   .tab {
     color: var(--fontColBtnBuy);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /* transition: background-color 0.3s ease, color 0.1s ease; */
+  }
+
+  .activeTab {
+    color: var(--foreground);
+    cursor: pointer;
   }
 
   .tab:hover {
@@ -26,9 +30,10 @@
   }
 }
 
-.tabButton:hover {
+
+/* .tabButton:hover {
   background-color: #bbb;
-}
+} */
 
 /* Lista */
 .categoryList {
@@ -68,6 +73,8 @@
     align-items: center;
     cursor: pointer;
     height: 80px;
+    border: 1px solid var(--borderColBtnBuy);
+    background-color: var(--bgColorCategoryList);
   }
 
   li.home:hover,
@@ -77,8 +84,8 @@
   li.woman:hover,
   li.men:hover,
   li.sports:hover {
-    background-color: rgb(179, 167, 147);
-    color: black;
+    background-color: var(--color-bg-button-hover);
+    color: var(--foreground);
   }
 
   li.beauty {
@@ -114,33 +121,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-
-  .categoryList {
-    background-color: var(--backgrond);
-    color: white;
-
-    li.home,
-    li.computing,
-    li.vehicle,
-    li.beauty,
-    li.woman,
-    li.men,
-    li.sports {
-      border: 1px solid var(--borderColBtnBuy);
-      background-color: var(--bgColorCategoryList);
-    }
-
-    li.home:hover,
-    li.computing:hover,
-    li.vehicle:hover,
-    li.beauty:hover,
-    li.woman:hover,
-    li.men:hover,
-    li.sports:hover {
-      background-color: var(--color-bg-button);
-      color: var(--foreground);
-    }
-  }
 
   img.product {
     opacity: 0.9;
