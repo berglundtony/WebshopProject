@@ -87,14 +87,15 @@
 
   .newPrice {
     color: rgb(165, 19, 19);
-    font-size: x-large;
+    font-size: 1.6rem;
+    margin-bottom: .3rem;;
     font-weight: bold;
   }
 
   .oldPrice {
     text-decoration: line-through;
     color: gray;
-    font-size: large;
+    font-size: 1.4rem;
     font-weight: 400;
   }
 }
