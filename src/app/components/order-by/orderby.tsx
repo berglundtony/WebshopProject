@@ -54,7 +54,6 @@ export default function OrderBy() {
         </select>
         <div className={styles.buttonWrapper}>
             <OrderFlipper onChange={changeOrder}></OrderFlipper>
-
         </div>
     </div>;
 }

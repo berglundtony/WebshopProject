@@ -35,6 +35,7 @@ function send(email: string, title: string, content: ReactNode): Promise<boolean
 
     const a = document.createElement("a");
     a.innerText = "Send mail";
+    a.className = "sendmail"
     a.onclick = (e: Event) => {
       ((e.target as HTMLAnchorElement).parentElement as HTMLDialogElement).close();
       resolve(true);
@@ -58,7 +59,7 @@ async function register(email: string): Promise<TransactionResult<boolean>> {
   }
 
   const mailResult = await send(email, "bekräfta email", <div className={style.mail}>
-    <a href={`http://localhost:3000/nyhetsbrev?action=confirm&key=${key}&email=${email}`} >bekräfta email</a>
+    <a className={style.confirm} href={`http://localhost:3000/nyhetsbrev?action=confirm&key=${key}&email=${email}`} >bekräfta email</a>
   </div>);
 
   if (mailResult) {

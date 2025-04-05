@@ -1,6 +1,8 @@
 :root {
   --background: rgb(230, 223, 211);
   --foreground: #171717;
+  --transparent: transparent;
+  --inputTextColor: #000000;
   --bgTopNavigation: rgb(121, 113, 94);
   --cardColor: rgb(220, 208, 185);
   --cardBorderColor: gray;
@@ -18,9 +20,11 @@
   --color-primary: #333;
   --color-secondary: #7575753f;
   --color-border: #3333333f;
-  --color-bg-button: #333;
-  --color-bg-button-hover: #3333333f;
+  --color-bg-button: #514e4e;
+  --color-bg-button-hover: #ece9e93f;
   --color-text-light: #fff;
+  --colorAdvertText: #a94f4f;
+  --searchInputTextColor: rgb(100, 75, 75);
 }
 
 body {
@@ -33,10 +37,26 @@ main {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #423535;
+    --background: #000000;
     --foreground: #ededed;
-    --cardColor: #473a21;
+    --transparent: #ffffffff;
+    --inputTextColor: #000000;
+    --bgTopNavigation: rgb(39, 38, 38);
+    --bgColBtnBuy: rgb(39, 37, 35);
+    --fontColBtnBuy: #b4b4b4;
+    --bgBtnBuyHover: rgb(116, 104, 94);
+    --colBtnBuyHover: rgb(5, 5, 5);
+    --cardColor: rgb(63, 59, 54);
     --cardBorderColor: rgb(56, 56, 56);
+    --borderColBtnBuy: rgb(87, 79, 65);
+    --color-bg-button: #9e9c9c;
+    --color-bg-button-hover: #ebebeb3f;
+    --linkColor: #fff;
+    --bgColorCategoryList: #2c2c2c;
+    --colorAdvertText: #ce2a2a;
+    --bgColDropDown: rgb(68, 67, 66);
+    --color-primary: #747373;
+    --searchInputTextColor: #fff;
   }
 }
 

@@ -6,7 +6,8 @@
 
 .stars{
     width: 6rem;
-    height: 1.5rem; 
+    height: 1.3rem; 
+    margin: 0 0 .2rem .2rem;
 }
 
 .frac{

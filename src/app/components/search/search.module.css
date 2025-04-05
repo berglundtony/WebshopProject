@@ -33,7 +33,7 @@
   padding: 6px 18px;
   outline: none;
   background-color: var(--bgColDropDown);
-  color: rgb(100, 75, 75);
+  color: var(--searchInputTextColor);
   text-align: left;
   font-size: 1rem;
 

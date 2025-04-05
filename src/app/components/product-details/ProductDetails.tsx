@@ -84,7 +84,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                         <ul className={styles.myUL} role="list">
                             <div className={styles.thumbs}>
                                 {product.images.map((img, index) => (
-                                    <li key={generateUniqueId()}>
+                                    <li key={img}>
                                         <Image
                                             className={styles.thumb}
                                             src={img}

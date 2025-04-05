@@ -9,7 +9,6 @@ export default function Footer() {
                 <div className={styles.contact}>
                         <p><i className="fa fa-phone" aria-hidden="true"></i>Telefon: <a
                             href="tel:+46201234567">020-1234567</a></p>
-                   
                 </div>
             </div>
             <div className={styles.rightSide}>
