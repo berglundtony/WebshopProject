@@ -20,13 +20,13 @@
     /* transition: background-color 0.3s ease, color 0.1s ease; */
   }
 
-  .activeTab {
-    color: var(--foreground);
+  a.activeTab {
+    color: var(--colorActiveTab);
     cursor: pointer;
   }
 
   .tab:hover {
-    color: var(--color-bg-button-hover);
+    color: var(--bgHoverDropDown);
   }
 }
 
@@ -45,9 +45,12 @@
 
     img.product {
       margin: .3rem 0;
-      width: clamp(18%, 10vw, 15%);
+      width: clamp(12%, 10vw, 5%);
       height: auto;
       object-fit: cover;
+    }
+    a.href:hover {
+      background-color: var(--color-bg-button-hover);
     }
   }
 
@@ -80,7 +83,6 @@
   li.men:hover,
   li.sports:hover {
     background-color: var(--color-bg-button-hover);
-    color: var(--foreground);
   }
 
   li.beauty {

@@ -7,11 +7,13 @@
   --cardColor: rgb(220, 208, 185);
   --cardBorderColor: gray;
   --bgColBtnDetails: rgb(139, 83, 10);
-  --bgColDropDown: rgb(189, 172, 148);
+  --bgColDropDown: rgb(171, 163, 143);;
   --bgsearchDropDown: rgb(164, 151, 130);
   --bgHoverDropDown: rgb(133, 109, 66);
+  --colorActiveTab:rgb(116, 76, 4);
   --bgColBtnBuy: rgb(179, 167, 147);
   --bgBtnBuyHover: rgb(121, 113, 94);
+  --bgColorCategoryList:#7a6a523f;
   --borderBtnBuyHover: rgb(17, 17, 15);
   --colBtnBuyHover: rgb(230, 223, 210);
   --fontColBtnBuy: rgb(49, 45, 37);
@@ -21,7 +23,7 @@
   --color-secondary: #7575753f;
   --color-border: #3333333f;
   --color-bg-button: #514e4e;
-  --color-bg-button-hover: #ece9e93f;
+  --color-bg-button-hover:rgb(163, 154, 135);
   --color-text-light: #fff;
   --colorAdvertText: #a94f4f;
   --searchInputTextColor: rgb(100, 75, 75);
