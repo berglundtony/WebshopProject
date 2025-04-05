@@ -25,6 +25,8 @@ export function Card({ product }: { product: Product }) {
     const { addToCart } = useCart();
     const router = useRouter();
     const discountedPrice = DiscountedPrice(product);
+    product.price = discountedPrice; 
+
 
     return (
         <li className={styles.card} aria-label={`Länk till ${product.title}`}>
