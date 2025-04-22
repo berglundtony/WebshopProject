@@ -6,7 +6,6 @@ import { useCart } from "@/app/cartprovider";
 import { useRouter } from "next/navigation";
 import { Star } from "lucide-react";
 
-
 export function CampaignProductList({ products }: { products: Product[] }) {
     return (
         <ul className={styles.cards} role="list">
@@ -25,7 +24,6 @@ export function Card({ product }: { product: Product }) {
     const { addToCart } = useCart();
     const router = useRouter();
     const discountedPrice = DiscountedPrice(product);
-    product.price = discountedPrice; 
 
 
     return (
@@ -74,7 +72,7 @@ export function Card({ product }: { product: Product }) {
                     </div>
                 </div>
                 <div className={styles.overlay}>
-                    <h1>Oslagbara<br /> priser hela påsken!</h1>
+                    <h1>Oslagbara<br />kampanjpriser 25% rabatt just nu!</h1>
                 </div>
             </a>
         </li>
