@@ -24,7 +24,7 @@ export default function Home() {
       </div>
       
       <div className={styles.discountWrapper}>
-        <h1 className={styles.advertText}>25% rabatt på föjande varor under Påsken!</h1>
+        <h1 className={styles.advertText}>25% rabatt på föjande varor under kampanjen!</h1>
       </div>
       <div className={styles.campaignWrapper}>
         <CampaignProductList products={state.products ?? []} />
